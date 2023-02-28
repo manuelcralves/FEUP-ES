@@ -13,7 +13,6 @@ Indicate an  initial/tentative list of high-level features - high-level capabili
 ...
 
 ### Assumptions and dependencies
-Indicate an  initial/tentative list of assumptions and dependencies 
 
 - Base de dados do Spotify
 - 
