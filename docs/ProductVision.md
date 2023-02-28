@@ -24,4 +24,3 @@ with other music lovers within the app.
 ### Assumptions and dependencies
 
 - Base de dados do Spotify
-- 
