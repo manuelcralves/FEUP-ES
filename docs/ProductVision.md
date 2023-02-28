@@ -3,21 +3,7 @@
 
 ### Vision Statement
 
-Our app aims to provide music lovers with a comprehensive platform to discover and enjoy their favorite songs, artists, and playlists from Spotify. We believe that music has the power to connect people and inspire emotions, and we want to facilitate that connection by offering an intuitive and user-friendly interface that allows users to easily search for and explore a vast library of musical content.
-
-With our app, users can discover new music, rediscover old favorites, and curate personalized playlists that reflect their unique tastes and moods.
-Our vision is to be the go-to destination for music lovers around the world, providing an unparalleled experience that fosters a deep and lasting appreciation for the art of music.
-
-**We favor a catchy and concise statement, ideally one sentence.**
-
-We suggest you use the product vision template described in the following link:
-* [How To Create A Convincing Product Vision To Guide Your Team, by uxstudioteam.com](https://uxstudioteam.com/ux-blog/product-vision/)
-
-To learn more about how to write a good product vision, please see also:
-* [Product Management: Product Vision, by ProductPlan](https://www.productplan.com/glossary/product-vision/)
-* [Vision, by scrumbook.org](http://scrumbook.org/value-stream/vision.html)
-* [How to write a vision, by dummies.com](https://www.dummies.com/business/marketing/branding/how-to-write-vision-and-mission-statements-for-your-brand/)
-* [20 Inspiring Vision Statement Examples (2019 Updated), by lifehack.org](https://www.lifehack.org/articles/work/20-sample-vision-statement-for-the-new-startup.html)
+Com uma friendly user-interface, os utilizadores poderam procurar e explorar um vasta libraria de musicas. Com o Spotivibes ,os utilizadores podem encontrar tudo sobre a sua musica favorita desde autor, album, ano, Leaderboards.
 
 
 ### Main Features
