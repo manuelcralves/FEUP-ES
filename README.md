@@ -27,9 +27,13 @@ Please contact us!
 Thank you!
 
 *Bernardo Pinto*
+
 *Diogo Geraldes*
+
 *João Rodrigues*
+
 *Manuel Alves*
+
 *Sofia Sousa*
 
 ---
