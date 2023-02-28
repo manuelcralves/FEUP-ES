@@ -4,6 +4,7 @@
 ### Vision Statement
 
 Our app aims to provide music lovers with a comprehensive platform to discover and enjoy their favorite songs, artists, and playlists from Spotify. We believe that music has the power to connect people and inspire emotions, and we want to facilitate that connection by offering an intuitive and user-friendly interface that allows users to easily search for and explore a vast library of musical content.
+
 With our app, users can discover new music, rediscover old favorites, and curate personalized playlists that reflect their unique tastes and moods.
 Our vision is to be the go-to destination for music lovers around the world, providing an unparalleled experience that fosters a deep and lasting appreciation for the art of music.
 
