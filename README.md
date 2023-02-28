@@ -1,6 +1,6 @@
 _Spotracker_ Development Report
 
-Welcome to the documentation pages of the _Spottracker_!
+Welcome to the documentation pages of the _Spotracker_!
 
 You can find here details about the product (or mini-app or module), from a high-level vision to low-level implementation decisions, a kind of Software Development Report, organized by discipline (as of Rational Unified Process): 
 
