@@ -3,9 +3,9 @@
 
 ### Vision Statement
 
-Start by defining a clear and concise vision for your app, to help members of the team, contributors, and users into focusing their often disparate views into a concise, visual, and short textual form. It provides a "high concept" of the product for marketers, developers, and managers.
-
-A product vision describes the essential of the product and sets the direction to where a product is headed, and what the product will deliver in the future. 
+Our app aims to provide music lovers with a comprehensive platform to discover and enjoy their favorite songs, artists, and playlists from Spotify. We believe that music has the power to connect people and inspire emotions, and we want to facilitate that connection by offering an intuitive and user-friendly interface that allows users to easily search for and explore a vast library of musical content.
+With our app, users can discover new music, rediscover old favorites, and curate personalized playlists that reflect their unique tastes and moods.
+Our vision is to be the go-to destination for music lovers around the world, providing an unparalleled experience that fosters a deep and lasting appreciation for the art of music.
 
 **We favor a catchy and concise statement, ideally one sentence.**
 
