@@ -26,7 +26,11 @@ Please contact us!
 
 Thank you!
 
-*team members names*
+*Bernardo Pinto*
+*Diogo Geraldes*
+*João Rodrigues*
+*Manuel Alves*
+*Sofia Sousa*
 
 ---
 
