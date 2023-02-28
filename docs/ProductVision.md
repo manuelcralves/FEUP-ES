@@ -3,7 +3,7 @@
 
 ### Vision Statement
 
-Com uma friendly user-interface, os utilizadores podem procurar e explorar um vasta libraria de músicas. Com o Spotivibes, os utilizadores podem encontrar tudo sobre a sua música favorita desde o seu autor, album, ano, Leaderboards.
+Com uma friendly user-interface, os utilizadores podem procurar e explorar um vasta libraria de músicas. Com o Spotivibes, os utilizadores podem encontrar tudo sobre a sua música favorita desde o seu autor, álbum, ano, Leaderboard.
 
 
 ### Main Features
