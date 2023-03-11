@@ -14,11 +14,12 @@ Indicate an  initial/tentative list of high-level features - high-level capabili
  - Main Feature 4 - Artist Profiles: Provide users with biographies, discographies, and related artists
  for each artist in the app's library.
  - Main Feature 5 - Integration with Spotify:  Allow users to go directly to the spotify, from a song/artist page.
- - Main Feature 6 - Comment: Users will be able to comment in a artist/song/playlist page. 
- - Optional Feature 7 - Explore: Provide users with personalized music reccommendations
+ - Main Feature 6 - Comment: Users will be able to comment in a artist/song/playlist page.
+ - Main Feature 7 - Login: Users will be able to create or login into an account, as well logout from an account. 
+ - Optional Feature 8 - Explore: Provide users with personalized music reccommendations
  and suggestions based on the users favorite songs
- - Optional Feature 8 - Lyrics: Allow users to view the lyrics of each song, as well as contribute to the app's lyrics database.
- - Optional Feature 9 - Social Features: Enable users to share songs and playlists on social media, as well as follow and connect 
+ - Optional Feature 9 - Lyrics: Allow users to view the lyrics of each song, as well as contribute to the app's lyrics database.
+ - Optional Feature 10 - Social Features: Enable users to share songs and playlists on social media, as well as follow and connect 
 with other music lovers within the app.
 
 ### Assumptions and dependencies
