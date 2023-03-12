@@ -14,7 +14,7 @@ You can find here details about the product (or mini-app or module), from a high
 * [Architecture and Design](docs/ArchitectureAndDesign.md)
   * [Logical architecture]
   * [Physical architecture]
-  * [Vertical prototype]
+  * [Vertical prototype](docs/Vertical_Prototype.fig)
 * [Implementation]
 * [Test]
 * [Configuration and change management]
