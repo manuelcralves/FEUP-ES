@@ -66,5 +66,5 @@ To better understand the context of the software system, it is very useful to ha
 Also provide a short textual description of each class. 
 
  <p align="center" justify="center">
-  <img src="[[https://github.com/FEUP-LEIC-ES-2022-23/2LEIC10T1/images/UML_page-0001.jpg](https://github.com/FEUP-LEIC-ES-2022-23/2LEIC10T1/blob/main/images/UML_page-0001.jpg)]"/>
+  <img src="https://github.com/FEUP-LEIC-ES-2022-23/2LEIC10T1/blob/main/images/UML_page-0001.jpg"/>
 </p>
