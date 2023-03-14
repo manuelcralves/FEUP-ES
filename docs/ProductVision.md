@@ -3,7 +3,7 @@
 
 ### Vision Statement
 
-Com uma friendly user-interface, os utilizadores podem procurar e explorar um vasta libraria de músicas. Com o Spotivibes, os utilizadores podem encontrar tudo sobre a sua música favorita desde o seu autor, álbum, ano, Leaderboard.
+With a friendly user interface, users can search and explore a vast library of music. With Spotivibes, users can find everything about their favorite music, from its author, album, year, and leaderboard.
 
 
 ### Main Features
@@ -24,4 +24,5 @@ with other music lovers within the app.
 
 ### Assumptions and dependencies
 
-- Base de dados do Spotify
+- SpotifyAPI
+- GoogleAPI
