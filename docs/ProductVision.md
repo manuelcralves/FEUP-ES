@@ -25,4 +25,5 @@ with other music lovers within the app.
 ### Assumptions and dependencies
 
 - SpotifyAPI
-- GoogleAPI
+- Google (Gmail)
+- Firebase
