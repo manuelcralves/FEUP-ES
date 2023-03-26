@@ -13,3 +13,10 @@ You can find below information and references related with the project managemen
 * Iteration planning and retrospectives: 
   * plans: screenshots of Github Projects board at begin and end of each iteration;
   * retrospectives: meeting notes in a document in the repository
+
+## iteration_1:
+
+### plans before:
+
+![Captura de ecrã 2023-03-26 173513](https://user-images.githubusercontent.com/114066283/227808082-e9142011-04c9-41b9-8892-ca5b7d534c0b.png)
+![Captura de ecrã 2023-03-26 173537](https://user-images.githubusercontent.com/114066283/227808090-64ce174c-7129-4dff-a82b-1fcd9cba9fe8.png)
