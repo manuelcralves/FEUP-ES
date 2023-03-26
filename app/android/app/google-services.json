@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "128633944154",
+    "firebase_url": "https://spotivibes-bad61-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "spotivibes-bad61",
+    "storage_bucket": "spotivibes-bad61.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128633944154:android:c74a5ac00155163e9e0063",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "128633944154-m9ebmv5ealr3gibecjsjahc9lquhfia3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPMQdDCxUx_e3JEoCLOVObMwX4VPwpEUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "128633944154-m9ebmv5ealr3gibecjsjahc9lquhfia3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
