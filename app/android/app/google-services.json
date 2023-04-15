@@ -30,6 +30,49 @@
             {
               "client_id": "128633944154-m9ebmv5ealr3gibecjsjahc9lquhfia3.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "128633944154-q5rtj9m318e52urgjj4mmbq4hbi82qp0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.spotivibes"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128633944154:android:2d53fce1c529bd309e0063",
+        "android_client_info": {
+          "package_name": "com.mycompany.spotivibes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "128633944154-m9ebmv5ealr3gibecjsjahc9lquhfia3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPMQdDCxUx_e3JEoCLOVObMwX4VPwpEUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "128633944154-m9ebmv5ealr3gibecjsjahc9lquhfia3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "128633944154-q5rtj9m318e52urgjj4mmbq4hbi82qp0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.spotivibes"
+              }
             }
           ]
         }
