@@ -1,0 +1,71 @@
+
+
+
+import 'package:app/HomePage/HomePage.dart';
+import 'package:app/Templates/Templates.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+import '../login/login_frontend.dart';
+
+class Playlist_Create extends StatefulWidget{
+  Playlist_Create({super.key});
+
+  @override
+  State<Playlist_Create> createState() => _PlaylistCreate();
+}
+
+class _PlaylistCreate extends State<Playlist_Create>{
+
+  String? playlist_name;
+
+  void add_to_playlist(){
+    HomePage().playlist_list?.add(playlist_name!);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: Templates().AppbarSpotivibes(),
+      body: Container(
+        margin: EdgeInsets.all(40),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      obscureText: true,
+                      decoration: const InputDecoration(
+                        labelText: 'Playlist Name',
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your password';
+                        }
+                        return null;
+                      },
+                      onChanged: (value) {
+                        setState(() {
+                          playlist_name = value;
+                        });
+                      },
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: add_to_playlist,
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size.zero,
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
+                    ),
+                    child: Text("Add"),
+                  ),
+                ],
+              ),
+        ],
+      ),
+    ),
+    );
+  }
+
+}

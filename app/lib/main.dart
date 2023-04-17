@@ -4,18 +4,21 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:app/login/login_frontend.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_driver/driver_extension.dart';
+import 'package:flutter_driver/flutter_driver.dart';
+import 'package:flutter_gherkin/flutter_gherkin.dart';
+import 'package:gherkin/gherkin.dart';
 
 import 'HomePage/HomePage.dart';
 
 User? user;
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  // Ideal time to initialize
-  await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
+void main() {
+  enableFlutterDriverExtension();
   runApp(const MyApp());
 }
+
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
