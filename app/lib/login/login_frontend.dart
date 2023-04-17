@@ -1,3 +1,4 @@
+import 'package:app/Templates/Templates.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -34,11 +35,7 @@ class LoginAccount extends State<Login_Page>{
   Widget build(BuildContext context) {
     return Scaffold(
       key: _formKey,
-      appBar:AppBar(
-        title: Text('Spotivibes'),
-        centerTitle: true,
-        backgroundColor: Colors.green[800],
-      ),
+      appBar:Templates().AppbarSpotivibes(),
       body:  Container(
           margin: EdgeInsets.all(40),
           child: Column(
@@ -48,6 +45,7 @@ class LoginAccount extends State<Login_Page>{
           ),
           SizedBox( height: 160),
           TextFormField(
+            key: Key("email"),
             decoration: InputDecoration(
               labelText: 'Username or email',
             ),
@@ -65,6 +63,7 @@ class LoginAccount extends State<Login_Page>{
           ),
           SizedBox(height: 30),
           TextFormField(
+            key: Key("password"),
             obscureText: true,
             decoration: InputDecoration(
               labelText: 'Password',
@@ -88,6 +87,7 @@ class LoginAccount extends State<Login_Page>{
             children:[
             SizedBox(height: 250,),
             Expanded(
+              key: Key("Sign In"),
               flex: 3,
               child: ElevatedButton(
                 onPressed: submit_login,
@@ -96,6 +96,7 @@ class LoginAccount extends State<Login_Page>{
             ),
             SizedBox(width: 40,),
               Expanded(
+                key: Key("Create"),
                 flex: 3,
                 child: ElevatedButton(
                   onPressed: submit_signup,

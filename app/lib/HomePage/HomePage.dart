@@ -1,6 +1,8 @@
 
 import 'dart:math';
 
+
+import 'package:app/Playlist/Playlist_create.dart';
 import 'package:app/login/login_backend.dart';
 import 'package:app/login/login_frontend.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +16,16 @@ settings
 
 class HomePage extends StatefulWidget {
 
+  List<String> playlist_list = [];
+
+  void playlist_add(String name){
+    if(name!="") {
+      playlist_list.add(name);
+    }
+  }
+  void playlist_remove(String name){
+    playlist_list.remove(name);
+  }
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -22,11 +34,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
+
   MenuValues? menu;
 
   void signout(){
     Login_Backend().signout();
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -71,8 +85,22 @@ class _HomePageState extends State<HomePage> {
 
         ],
       ),
-      body: Center(
-        child: Text('Bem-vindo à minha App!'),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Padding(padding: EdgeInsets.only(top: 70)),
+          Text(
+              "Playlists",
+              style: TextStyle(fontSize: 30,fontFamily: AutofillHints.givenName),),
+          FloatingActionButton(
+              onPressed:(){ Navigator.push(
+              context,
+            MaterialPageRoute(builder: (context) => Playlist_Create()),
+              );
+            },
+            child: const Icon(Icons.add),
+          ),
+        ],
       ),
     );
   }
