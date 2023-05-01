@@ -10,11 +10,15 @@ import 'package:flutter_gherkin/flutter_gherkin.dart';
 import 'package:gherkin/gherkin.dart';
 
 import 'HomePage/HomePage.dart';
+import 'firebase_options.dart';
 
 User? user;
 
-void main() {
-  enableFlutterDriverExtension();
+Future<void> main() async {
+  //enableFlutterDriverExtension();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 

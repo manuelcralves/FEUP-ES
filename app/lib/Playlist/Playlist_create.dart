@@ -35,7 +35,6 @@ class _PlaylistCreate extends State<Playlist_Create>{
                 children: [
                   Expanded(
                     child: TextFormField(
-                      obscureText: true,
                       decoration: const InputDecoration(
                         labelText: 'Playlist Name',
                       ),
