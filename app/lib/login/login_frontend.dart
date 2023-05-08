@@ -23,11 +23,11 @@ class LoginAccount extends State<Login_Page>{
   String? _password;
 
   Future<void> submit_login() async {
-    user = await login_backend.signInWithEmailAndPassword(_email!, _password!);
+    await login_backend.signInWithEmailAndPassword(_email!, _password!);
   }
   Future<void> submit_signup() async{
     if (_email != null && _password != null) {
-      user = await login_backend.signUpWithEmailAndPassword(_email!, _password!);
+      await login_backend.signUpWithEmailAndPassword(_email!, _password!);
     }
   }
 

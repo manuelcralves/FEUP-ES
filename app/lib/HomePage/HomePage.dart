@@ -2,11 +2,13 @@
 import 'dart:math';
 
 
-import 'package:app/Playlist/Playlist_create.dart';
+import 'package:app/Playlist/Playlist_create_frontend.dart';
 import 'package:app/login/login_backend.dart';
 import 'package:app/login/login_frontend.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../main.dart';
 
 enum MenuValues{
 login,
@@ -37,6 +39,18 @@ class _HomePageState extends State<HomePage> {
 
   MenuValues? menu;
 
+  User? user;
+
+  @override
+  void initState() {
+    super.initState();
+    FirebaseAuth.instance.authStateChanges().listen((User? user) {
+      setState(() {
+        this.user = user;
+      });
+    });
+  }
+
   void signout(){
     Login_Backend().signout();
   }
@@ -46,7 +60,25 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Spotivibes'),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Text(
+                'Spotivibes',
+                textAlign: TextAlign.center,
+              ),
+            ),
+            SizedBox(width: 10),
+            user != null ? Text(
+              user!.email!,
+              style: TextStyle(fontSize: 12),
+            ) : Text(
+              'Not logged in',
+              style: TextStyle(fontSize: 12),
+            ),
+          ],
+        ),
         centerTitle: true,
         backgroundColor: Colors.green[800],
         actions: [

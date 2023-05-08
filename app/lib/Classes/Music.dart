@@ -5,6 +5,7 @@ class Music {
   late int _idMusic;
   late Artist _artist;
   late Album _album;
+  late String _lyrics;
 
   int getIdMusic() {
     return _idMusic;
@@ -30,9 +31,18 @@ class Music {
     _album = album;
   }
 
-  Music(int idMusic, Artist artist, Album album) {
+  String getLyrics() {
+    return _lyrics;
+  }
+
+  void setLyrics(String lyrics) {
+    _lyrics = lyrics;
+  }
+
+  Music(int idMusic, Artist artist, Album album, String lyrics) {
     _idMusic = idMusic;
     _artist = artist;
     _album = album;
+    _lyrics = lyrics;
   }
 }
