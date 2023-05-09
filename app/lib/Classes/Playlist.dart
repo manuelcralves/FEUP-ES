@@ -3,17 +3,8 @@
 import 'Music.dart';
 
 class Playlist{
-  late int _idOwner;
   late String _title;
   late List<Music> _musics;
-
-  int getIdOwner() {
-    return _idOwner;
-  }
-
-  void setIdOwner(int idOwner) {
-    _idOwner = idOwner;
-  }
 
   String getTitle() {
     return _title;
@@ -31,8 +22,7 @@ class Playlist{
     _musics = musics;
   }
 
-  Playlist(int idOwner, String title, List<Music> musics) {
-    _idOwner = idOwner;
+  Playlist(String title, List<Music> musics) {
     _title = title;
     _musics = musics;
   }

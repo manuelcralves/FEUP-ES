@@ -12,8 +12,6 @@ import 'package:gherkin/gherkin.dart';
 import 'HomePage/HomePage.dart';
 import 'firebase_options.dart';
 
-User? user;
-
 Future<void> main() async {
   //enableFlutterDriverExtension();
   await Firebase.initializeApp(
