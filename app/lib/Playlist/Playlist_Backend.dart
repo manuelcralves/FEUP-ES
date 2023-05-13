@@ -28,7 +28,7 @@ class Playlist_Backend extends Playlist{
     if (playlistMap != null) {
       playlistMap.forEach((key, value) {
         String title = value["title"];
-        List<Music> musics = List<Music>.from(value["musics"]);
+        List<int> musics = List<int>.from(value["musics"]);
         playlists.add(new Playlist(title, musics));
       });
     }

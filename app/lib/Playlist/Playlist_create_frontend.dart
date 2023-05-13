@@ -24,7 +24,7 @@ class _PlaylistCreate extends State<Playlist_Create>{
   late String playlist_name;
 
   void add_to_playlist(){
-    List<Music> musics= [];
+    List<int> musics= [];
     Playlist_Backend playlist = new Playlist_Backend(playlist_name, musics);
     playlist.addPlaylistToFirebase();
   }

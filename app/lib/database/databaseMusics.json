@@ -1,0 +1,145 @@
+
+{
+  "Musics": [
+    {
+      "_idMusic": 1,
+      "_name": "Hello",
+      "_artist": "Adele",
+      "_album": 1,
+      "_lyrics": "Hello from the other side"
+    },
+    {
+      "_idMusic": 2,
+      "_name": "Obrigado Quim Barreiros",
+      "_artist": "Quim Barreiros",
+      "_album": 2,
+      "_lyrics": "Obrigado, obrigado"
+    },
+    {
+      "_idMusic": 3,
+      "_name": "Someone Like You",
+      "_artist": "Adele",
+      "_album": 1,
+      "_lyrics": "Nevermind, I'll find someone like you"
+    },
+    {
+      "_idMusic": 4,
+      "_name": "Rolling in the Deep",
+      "_artist": "Adele",
+      "_album": 1,
+      "_lyrics": "We could have had it all"
+    },
+    {
+      "_idMusic": 5,
+      "_name": "Set Fire to the Rain",
+      "_artist": "Adele",
+      "_album": 1,
+      "_lyrics": "But I set fire to the rain"
+    },
+    {
+      "_idMusic": 6,
+      "_name": "Skyfall",
+      "_artist": "Adele",
+      "_album": 3,
+      "_lyrics": "Let the sky fall"
+    },
+    {
+      "_idMusic": 7,
+      "_name": "A Garagem da Vizinha",
+      "_artist": "Quim Barreiros",
+      "_album": 2,
+      "_lyrics": "Ela é boa, é boa, é boa"
+    },
+    {
+      "_idMusic": 8,
+      "_name": "When We Were Young",
+      "_artist": "Adele",
+      "_album": 1,
+      "_lyrics": "Let me photograph you in this light"
+    },
+    {
+      "_idMusic": 9,
+      "_name": "Turning Tables",
+      "_artist": "Adele",
+      "_album": 1,
+      "_lyrics": "Close enough to start a war"
+    },
+    {
+      "_idMusic": 10,
+      "_name": "Water Under the Bridge",
+      "_artist": "Adele",
+      "_album": 4,
+      "_lyrics": "If you're gonna let me down, let me down gently"
+    },
+    {
+      "_idMusic": 11,
+      "_name": "Send My Love (To Your New Lover)",
+      "_artist": "Adele",
+      "_album": 4,
+      "_lyrics": "Send my love to your new lover"
+    },
+    {
+      "_idMusic": 12,
+      "_name": "I'll Be Waiting",
+      "_artist": "Adele",
+      "_album": 2,
+      "_lyrics": "Hold me closer one more time"
+    },
+    {
+      "_idMusic": 13,
+      "_name": "Chasing Pavements",
+      "_artist": "Adele",
+      "_album": 1,
+      "_lyrics": "Should I give up, or should I just keep chasing pavements?"
+    },
+    {
+      "_idMusic": 14,
+      "_name": "All I Ask",
+      "_artist": "Adele",
+      "_album": 4,
+      "_lyrics": "All I ask is you, no more"
+    },
+    {
+      "_idMusic": 15,
+      "_name": "Bacalhau Quer Alho",
+      "_artist": "Quim Barreiros",
+      "_album": 2,
+      "_lyrics": "Bacalhau quer alho, alho quer bacalhau"
+    },
+    {
+      "_idMusic": 16,
+      "_name": "Don't talk anymore",
+      "_artist": "Adele",
+      "_album": 4,
+      "_lyrics": "We don't talk anymore"
+    },
+    {
+      "_idMusic": 17,
+      "_name": "31 agosto",
+      "_artist": "Quim Barreiros",
+      "_album": 2,
+      "_lyrics": "É o 31 de julho, porque depois entra agosto"
+    },
+    {
+      "_idMusic": 18,
+      "_name": "Shake It Off",
+      "_artist": "Taylor Swift",
+      "_album": 7,
+      "_lyrics": "'Cause the players gonna play, play, play, play, play\nAnd the haters gonna hate, hate, hate, hate, hate\nBaby, I'm just gonna shake, shake, shake, shake, shake\nI shake it off, I shake it off"
+    },
+    {
+      "_idMusic": 19,
+      "_name": "Te amo tanto",
+      "_artist": "David Carreira",
+      "_album": 5,
+      "_lyrics": "Te amo tanto, tanto, tanto, tanto, tanto, tanto\nTe amo tanto, tanto, tanto, tanto, tanto, tanto"
+    },
+    {
+      "_idMusic": 20,
+      "_name": "Titanium",
+      "_artist": "David Guetta feat. Sia",
+      "_album": 6,
+      "_lyrics": "I am titanium\nYou shoot me down, but I won't fall\nI am titanium"
+    }
+  ]
+}
