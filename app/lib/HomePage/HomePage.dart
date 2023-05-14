@@ -124,19 +124,20 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         margin: EdgeInsets.only(left: 20),
         child: Container(
-          child:
-          Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(padding: EdgeInsets.only(top: 70)),
-            Text(
-            "Playlists",
-            style: TextStyle(fontSize: 30, fontFamily: AutofillHints.givenName),
-          ),
-            Padding(padding: EdgeInsets.only(top: 70)),
-            FloatingActionButton(
-            onPressed: () {
+          child: Visibility(
+            visible: FirebaseAuth.instance.currentUser?.uid!=null,
+            child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(padding: EdgeInsets.only(top: 70)),
+              Text(
+              "Playlists",
+              style: TextStyle(fontSize: 30, fontFamily: AutofillHints.givenName),
+            ),
+              Padding(padding: EdgeInsets.only(top: 70)),
+              FloatingActionButton(
+              onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => Playlist_Create()),
@@ -144,14 +145,14 @@ class _HomePageState extends State<HomePage> {
             },
             child: const Icon(Icons.add),
           ),
-          SizedBox(height: 16), // adicionar um espaço entre o botão e as playlists
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: StreamBuilder(
-                  stream: Playlist_Backend.getPlaylistsFromFirebase(FirebaseAuth.instance.currentUser?.uid),
-                  builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+              SizedBox(height: 16),
+              Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: StreamBuilder(
+                    stream: Playlist_Backend.getPlaylistsFromFirebase(FirebaseAuth.instance.currentUser?.uid),
+                    builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
                     if (snapshot.hasData) {
                       Map<dynamic, dynamic>? playlists = snapshot.data!.snapshot.value;
                       if (playlists != null) {
@@ -193,6 +194,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
         ),
+      ),
       ),
     );
   }
