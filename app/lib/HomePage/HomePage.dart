@@ -2,12 +2,16 @@
 import 'dart:math';
 
 
+import 'package:app/Playlist/Playlist_Backend.dart';
 import 'package:app/Playlist/Playlist_create_frontend.dart';
 import 'package:app/login/login_backend.dart';
 import 'package:app/login/login_frontend.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../Playlist/PlaylistPage.dart';
 import '../main.dart';
 
 enum MenuValues{
@@ -117,22 +121,78 @@ class _HomePageState extends State<HomePage> {
 
         ],
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Padding(padding: EdgeInsets.only(top: 70)),
-          Text(
-              "Playlists",
-              style: TextStyle(fontSize: 30,fontFamily: AutofillHints.givenName),),
-          FloatingActionButton(
-              onPressed:(){ Navigator.push(
-              context,
-            MaterialPageRoute(builder: (context) => Playlist_Create()),
+      body: Container(
+        margin: EdgeInsets.only(left: 20),
+        child: Container(
+          child:
+          Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(padding: EdgeInsets.only(top: 70)),
+            Text(
+            "Playlists",
+            style: TextStyle(fontSize: 30, fontFamily: AutofillHints.givenName),
+          ),
+            Padding(padding: EdgeInsets.only(top: 70)),
+            FloatingActionButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Playlist_Create()),
               );
             },
             child: const Icon(Icons.add),
           ),
+          SizedBox(height: 16), // adicionar um espaço entre o botão e as playlists
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: StreamBuilder(
+                  stream: Playlist_Backend.getPlaylistsFromFirebase(FirebaseAuth.instance.currentUser?.uid),
+                  builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+                    if (snapshot.hasData) {
+                      Map<dynamic, dynamic>? playlists = snapshot.data!.snapshot.value;
+                      if (playlists != null) {
+                        List<Widget> buttons = [];
+                        playlists.forEach((key, value) {
+                          buttons.add(
+                            Column(
+                              children: [
+                                const SizedBox(
+                                  height: 16,
+                                ),
+                                FloatingActionButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => PlaylistPage(title: key)),
+                                    );
+                                  },
+                                  child:Text(key),
+                                  backgroundColor: Colors.blue,
+                                ),
+                              ],
+                            ),
+                          );
+                        });
+                        return Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: buttons,
+                        );
+                      }
+                    }
+                    return Container();
+                  },
+                ),
+              ),
+            ],
+          ),
         ],
+      ),
+        ),
       ),
     );
   }
