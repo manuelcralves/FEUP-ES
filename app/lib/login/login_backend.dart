@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 
 class Login_Backend {
-  Future<User?> signUpWithEmailAndPassword(String email, String password) async {
+  Future<void> signUpWithEmailAndPassword(String email, String password) async {
 
     await Firebase.initializeApp();
 
@@ -15,7 +15,6 @@ class Login_Backend {
         email: email,
         password: password,
       );
-      return credential.user;
     } on FirebaseAuthException catch (e) {
       String x = e.code;
       if (e.code == 'weak-password') {
@@ -30,7 +29,7 @@ class Login_Backend {
     return null;
   }
 
-  Future<User?> signInWithEmailAndPassword (String email, String password) async{
+  Future<void> signInWithEmailAndPassword (String email, String password) async{
 
     await Firebase.initializeApp();
 
@@ -39,7 +38,6 @@ class Login_Backend {
           email: email,
           password: password
       );
-      return credential.user;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         print('No user found for that email.');

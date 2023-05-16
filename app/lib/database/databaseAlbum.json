@@ -1,0 +1,39 @@
+{
+  "Albums": [
+    {
+      "_idAlbum": 1,
+      "_name": "21",
+      "_artist": "Adele"
+    },
+    {
+      "_idAlbum": 2,
+      "_name": "Ao Vivo na Exponor",
+      "_artist": "Quim Barreiros"
+    },
+    {
+      "_idAlbum": 3,
+      "_name": "Skyfall (Original Motion Picture Soundtrack)",
+      "_artist": "Adele"
+    },
+    {
+      "_idAlbum": 4,
+      "_name": "25",
+      "_artist": "Adele"
+    },
+    {
+      "_idAlbum": 5,
+      "_name": "Nº 1",
+      "_artist": "David Carreira"
+    },
+    {
+      "_idAlbum": 6,
+      "_name": "Nothing But the Beat",
+      "_artist": "David Guetta"
+    },
+    {
+      "_idAlbum": 7,
+      "_name": "1989",
+      "_artist": "Taylor Swift"
+    }
+  ]
+}
