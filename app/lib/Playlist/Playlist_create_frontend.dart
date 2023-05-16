@@ -32,7 +32,7 @@ class _PlaylistCreate extends State<Playlist_Create>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Templates().AppbarSpotivibes(),
+      appBar: Templates.AppbarSpotivibes(),
       body: Container(
         margin: EdgeInsets.all(40),
           child: Column(

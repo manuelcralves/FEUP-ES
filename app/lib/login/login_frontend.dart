@@ -35,7 +35,7 @@ class LoginAccount extends State<Login_Page>{
   Widget build(BuildContext context) {
     return Scaffold(
       key: _formKey,
-      appBar:Templates().AppbarSpotivibes(),
+      appBar:Templates.AppbarSpotivibes(),
       body:  Container(
           margin: EdgeInsets.all(40),
           child: Column(

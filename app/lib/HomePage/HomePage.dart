@@ -4,6 +4,7 @@ import 'dart:math';
 
 import 'package:app/Playlist/Playlist_Backend.dart';
 import 'package:app/Playlist/Playlist_create_frontend.dart';
+import 'package:app/Templates/Templates.dart';
 import 'package:app/login/login_backend.dart';
 import 'package:app/login/login_frontend.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -196,6 +197,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       ),
+      bottomNavigationBar: Templates.Footer(context)
     );
   }
 }
