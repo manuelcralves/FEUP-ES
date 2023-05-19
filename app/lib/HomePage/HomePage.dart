@@ -23,16 +23,6 @@ settings
 
 class HomePage extends StatefulWidget {
 
-  List<String> playlist_list = [];
-
-  void playlist_add(String name){
-    if(name!="") {
-      playlist_list.add(name);
-    }
-  }
-  void playlist_remove(String name){
-    playlist_list.remove(name);
-  }
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -152,7 +142,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Expanded(
                   child: StreamBuilder(
-                    stream: Playlist_Backend.getPlaylistsFromFirebase(FirebaseAuth.instance.currentUser?.uid),
+                    stream: Playlist_Backend.getPlaylistsFromFirebase(),
                     builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
                     if (snapshot.hasData) {
                       Map<dynamic, dynamic>? playlists = snapshot.data!.snapshot.value;
