@@ -72,6 +72,16 @@ class _IndexState extends State<Index> {
               icon: Icon(Icons.exit_to_app),
               onPressed: signout, // Call the signout function
             ),
+          if (isLoggedIn)
+            IconButton(
+              icon: Icon(Icons.playlist_add),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Playlist_Create()),
+                );
+              },
+            ),
           if (!isLoggedIn)
             IconButton(
               icon: Icon(Icons.exit_to_app),
@@ -90,29 +100,33 @@ class _IndexState extends State<Index> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             // Process and display the playlists data
-            Map<dynamic, dynamic> playlistsData = snapshot.data!.snapshot.value;
-            List<Widget> playlistWidgets = [];
-            if (playlistsData != null) {
-              playlistsData.forEach((key, value) {
-                String playlistTitle = key;
-                String playlistCreator = value['creator'] ?? 'Unknown Creator'; // Add null-checking
-                // Create a widget for each playlist
-                playlistWidgets.add(ListTile(
-                  title: Text(playlistTitle),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PlaylistPage(
-                          title: playlistTitle,
-                          creator: playlistCreator,
-                        ),
-                      ),
-                    );
-                  },
-                ));
-              });
+            Map<dynamic, dynamic>? playlistsData =
+                snapshot.data?.snapshot.value;
+            if (playlistsData == null || playlistsData.isEmpty) {
+              return Center(
+                child: Text('User has no Playlists Created!'),
+              );
             }
+            List<Widget> playlistWidgets = [];
+            playlistsData.forEach((key, value) {
+              String playlistTitle = key;
+              String playlistCreator =
+                  value['creator'] ?? 'Unknown Creator';
+              playlistWidgets.add(ListTile(
+                title: Text(playlistTitle),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PlaylistPage(
+                        title: playlistTitle,
+                        creator: playlistCreator,
+                      ),
+                    ),
+                  );
+                },
+              ));
+            });
             return ListView(
               children: playlistWidgets,
             );
@@ -127,7 +141,7 @@ class _IndexState extends State<Index> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('You need to be logged in to check all funcionalities!'),
+            Text('You need to be logged in to check all functionalities!'),
             IconButton(
               icon: Icon(Icons.exit_to_app),
               onPressed: () {
@@ -142,6 +156,7 @@ class _IndexState extends State<Index> {
       ),
     );
   }
+
 
 
 }
