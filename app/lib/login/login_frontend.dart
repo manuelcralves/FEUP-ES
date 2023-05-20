@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:app/login/login_backend.dart';
 
+import '../Index/index.dart';
 import '../main.dart';
 
 class Login_Page extends StatefulWidget{
@@ -23,8 +24,18 @@ class LoginAccount extends State<Login_Page>{
   String? _password;
 
   Future<void> submit_login() async {
-    await login_backend.signInWithEmailAndPassword(_email!, _password!);
+    try {
+      await login_backend.signInWithEmailAndPassword(_email!, _password!);
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => Index()),
+      );
+    } catch (e) {
+      // Handle login failure, show error message, etc.
+      print('Login failed: $e');
+    }
   }
+
   Future<void> submit_signup() async{
     if (_email != null && _password != null) {
       await login_backend.signUpWithEmailAndPassword(_email!, _password!);

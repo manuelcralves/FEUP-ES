@@ -29,14 +29,12 @@ class Login_Backend {
     return null;
   }
 
-  Future<void> signInWithEmailAndPassword (String email, String password) async{
-
-    await Firebase.initializeApp();
-
+  Future<void> signInWithEmailAndPassword(String email, String password) async {
     try {
-      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-          email: email,
-          password: password
+      await Firebase.initializeApp();
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
       );
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
@@ -45,8 +43,8 @@ class Login_Backend {
         print('Wrong password provided for that user.');
       }
     }
-    return null;
   }
+
 
   Future<void> signout() async{
     try{
