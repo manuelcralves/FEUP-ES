@@ -11,6 +11,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../Index/index.dart';
 import '../Playlist/PlaylistPage.dart';
 import '../main.dart';
 
@@ -109,7 +110,10 @@ class _HomePageState extends State<HomePage> {
               SizedBox(height: 20),
               OutlinedButton(
                 onPressed: () {
-                  // Handle guest mode here
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Index()),
+                  );
                 },
                 child: Text(
                   'Continue as Guest',
@@ -123,6 +127,7 @@ class _HomePageState extends State<HomePage> {
                   side: BorderSide(color: Colors.black),
                 ),
               ),
+
             ],
           ),
         ),

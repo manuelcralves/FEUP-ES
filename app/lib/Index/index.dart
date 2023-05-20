@@ -40,19 +40,24 @@ class _IndexState extends State<Index> {
 
   @override
   Widget build(BuildContext context) {
+    User? currentUser = FirebaseAuth.instance.currentUser;
+    bool isLoggedIn = currentUser != null;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Index Page'),
+        automaticallyImplyLeading: false, // Remove the "Go Back" arrow
         actions: [
-          IconButton(
-            icon: Icon(Icons.person),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Profile()),
-              );
-            },
-          ),
+          if (isLoggedIn)
+            IconButton(
+              icon: Icon(Icons.person),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Profile()),
+                );
+              },
+            ),
           IconButton(
             icon: Icon(Icons.settings),
             onPressed: () {
@@ -62,22 +67,25 @@ class _IndexState extends State<Index> {
               );
             },
           ),
-          IconButton(
-            icon: Icon(Icons.exit_to_app),
-            onPressed: signout, // Call the signout function
-          ),
-          IconButton(
-            icon: Icon(Icons.add),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Playlist_Create()),
-              );
-            },
-          ),
+          if (isLoggedIn)
+            IconButton(
+              icon: Icon(Icons.exit_to_app),
+              onPressed: signout, // Call the signout function
+            ),
+          if (!isLoggedIn)
+            IconButton(
+              icon: Icon(Icons.exit_to_app),
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
+              },
+            ),
         ],
       ),
-      body: StreamBuilder(
+      body: isLoggedIn
+          ? StreamBuilder(
         stream: playlistsStream,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
@@ -114,9 +122,26 @@ class _IndexState extends State<Index> {
             return CircularProgressIndicator();
           }
         },
-
-
+      )
+          : Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('You need to be logged in to check all funcionalities!'),
+            IconButton(
+              icon: Icon(Icons.exit_to_app),
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
+
+
 }
