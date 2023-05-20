@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../Classes/Music.dart';
+import '../Search/Search_Frontend_Musics.dart';
 import '../Templates/Templates.dart';
 
 class PlaylistPage extends StatefulWidget{
@@ -52,19 +53,7 @@ class _PlaylistPageState extends State<PlaylistPage>{
       appBar: Templates.AppbarSpotivibes(),
       body:Column(
         children:[
-          Padding(
-            padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 80.0),
-            child: Center(
-              child: Text(
-                widget.title,
-                style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue,
-                ),
-              ),
-            ),
-          ),
+          Templates.SubTitle(widget.title),
           Expanded(
             child: ListView.separated(
               itemCount: musicList.length,
@@ -76,9 +65,28 @@ class _PlaylistPageState extends State<PlaylistPage>{
                 Music music = musicList[index];
                 return ListTile(
                   title: Text(music.getName()),
-                  trailing: ElevatedButton(
-                    onPressed: () {},
-                    child: Text('See More'),
+                  trailing: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          Playlist_Backend.removeMusicFromPlaylist(music.getIdMusic(), widget.title);
+                          loadMusicList();
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.red,
+                        ),
+                        child: Text('Remove'),
+                      ),
+                      SizedBox(width: 8.0), // Espaçamento entre os botões
+                      ElevatedButton(
+                        onPressed: () {
+                          // Lógica para ver mais detalhes da música
+                          // ...
+                        },
+                        child: Text('See More'),
+                      ),
+                    ],
                   ),
                 );
               },
@@ -88,13 +96,19 @@ class _PlaylistPageState extends State<PlaylistPage>{
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Lógica do botão flutuante
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Search_Frontend_Musics(playlist_name: widget.title),
+            ),
+          ).then((value){
+              loadMusicList();
+          });
         },
         child: Icon(Icons.add),
         backgroundColor: Colors.blue,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-      bottomNavigationBar: Templates.Footer(context),
     );
   }
 

@@ -2,7 +2,7 @@ import 'package:app/HomePage/HomePage.dart';
 import 'package:app/Profile/Profile_frontend.dart';
 import 'package:flutter/material.dart';
 
-import '../Search/Search_frontend.dart';
+import '../Search/Search_Frontend_Musics.dart';
 
 class Templates{
 
@@ -34,13 +34,28 @@ class Templates{
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
                 break;
               case 1:
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => search_frontend()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Search_Frontend_Musics(playlist_name: '',)));
                 break;
               case 2:
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => profile_frontend()));
                 break;
             }
           },
+      );
+    }
+    static SubTitle(String text){
+      return Padding(
+        padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 80.0),
+        child: Center(
+          child: Text(
+            text,
+            style: TextStyle(
+              fontSize: 40,
+              fontWeight: FontWeight.bold,
+              color: Colors.blue,
+            ),
+          ),
+        ),
       );
     }
 }
