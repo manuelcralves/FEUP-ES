@@ -7,6 +7,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:app/Playlist/Playlist_Backend.dart';
 
+import '../Playlist/PlaylistPage.dart';
+
 class Index extends StatefulWidget {
   @override
   _IndexState createState() => _IndexState();
@@ -85,9 +87,21 @@ class _IndexState extends State<Index> {
             if (playlistsData != null) {
               playlistsData.forEach((key, value) {
                 String playlistTitle = key;
+                String playlistCreator = value['creator'] ?? 'Unknown Creator'; // Add null-checking
                 // Create a widget for each playlist
                 playlistWidgets.add(ListTile(
                   title: Text(playlistTitle),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PlaylistPage(
+                          title: playlistTitle,
+                          creator: playlistCreator,
+                        ),
+                      ),
+                    );
+                  },
                 ));
               });
             }
@@ -100,6 +114,8 @@ class _IndexState extends State<Index> {
             return CircularProgressIndicator();
           }
         },
+
+
       ),
     );
   }
