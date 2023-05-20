@@ -31,7 +31,23 @@ class LoginAccount extends State<Login_Page> {
         );
       } else {
         // Handle invalid credentials
-        print('Invalid login credentials');
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text('Login Failed'),
+              content: Text('Email or password are incorrect.'),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text('OK'),
+                ),
+              ],
+            );
+          },
+        );
       }
     } catch (e) {
       // Handle login failure, show error message, etc.
@@ -39,13 +55,37 @@ class LoginAccount extends State<Login_Page> {
     }
   }
 
-
-
   Future<void> submit_signup() async {
     if (_email != null && _password != null) {
-      await login_backend.signUpWithEmailAndPassword(_email!, _password!);
+      if (_password!.length < 6) {
+        // Handle password length requirement
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text('Signup Failed'),
+              content: Text('Password must be at least 6 characters long.'),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text('OK'),
+                ),
+              ],
+            );
+          },
+        );
+      } else {
+        await login_backend.signUpWithEmailAndPassword(_email!, _password!);
+
+        // Sign in the user after successful signup
+        await submit_login();
+      }
     }
   }
+
+
 
   @override
   Widget build(BuildContext context) {
