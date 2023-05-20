@@ -1,5 +1,13 @@
+import 'package:app/HomePage/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:app/profile/profile.dart';
+import 'package:flutter/material.dart';
+import 'package:app/profile/profile.dart';
+import 'package:app/settings/settings.dart';
+import '../login/login_backend.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+import '../settings/settings.dart';
 
 class Index extends StatefulWidget {
   @override
@@ -7,6 +15,19 @@ class Index extends StatefulWidget {
 }
 
 class _IndexState extends State<Index> {
+  Future<void> signout() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      // Redirect to the homepage
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
+    } on FirebaseAuthException catch (e) {
+      print(e.code);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,12 +43,18 @@ class _IndexState extends State<Index> {
               );
             },
           ),
-
           IconButton(
             icon: Icon(Icons.settings),
             onPressed: () {
-              // Handle settings button press
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Settings()),
+              );
             },
+          ),
+          IconButton(
+            icon: Icon(Icons.exit_to_app),
+            onPressed: signout, // Call the signout function
           ),
         ],
       ),
@@ -37,4 +64,3 @@ class _IndexState extends State<Index> {
     );
   }
 }
-
