@@ -7,9 +7,13 @@ import 'package:app/Templates/Templates.dart';
 import 'package:app/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:app/Playlist/Playlist_Backend.dart';
+import 'package:flutter/material.dart';
+
 
 import '../Classes/Music.dart';
 import '../Classes/Playlist.dart';
+import '../Index/index.dart';
 import '../login/login_frontend.dart';
 
 class Playlist_Create extends StatefulWidget{
@@ -23,11 +27,17 @@ class _PlaylistCreate extends State<Playlist_Create>{
 
   late String playlist_name;
 
-  void add_to_playlist(){
-    List<int> musics= [];
-    Playlist_Backend playlist = new Playlist_Backend(playlist_name, musics);
-    playlist.addPlaylistToFirebase();
+  void add_to_playlist() {
+    List<int> musics = [];
+    Playlist_Backend playlist = Playlist_Backend(playlist_name, musics);
+    playlist.addPlaylistToFirebase().then((_) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => Index()), // Navigate back to the index page
+      );
+    });
   }
+
 
   @override
   Widget build(BuildContext context) {

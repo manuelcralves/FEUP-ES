@@ -1,25 +1,21 @@
-import 'package:app/Music/Music_Backend.dart';
-import 'package:app/Playlist/Playlist_Backend.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../Classes/Music.dart';
+import '../Music/Music_Backend.dart';
 import '../Search/Search_Frontend_Musics.dart';
 import '../Templates/Templates.dart';
+import 'Playlist_Backend.dart';
 
-class PlaylistPage extends StatefulWidget{
+class PlaylistPage extends StatefulWidget {
   final String title;
 
   PlaylistPage({required this.title});
 
   @override
-  @override
   _PlaylistPageState createState() => _PlaylistPageState();
-
 }
 
-class _PlaylistPageState extends State<PlaylistPage>{
-
+class _PlaylistPageState extends State<PlaylistPage> {
   List<Music> musicList = [];
 
   @override
@@ -102,7 +98,7 @@ class _PlaylistPageState extends State<PlaylistPage>{
               builder: (context) => Search_Frontend_Musics(playlist_name: widget.title),
             ),
           ).then((value){
-              loadMusicList();
+            loadMusicList();
           });
         },
         child: Icon(Icons.add),
@@ -111,5 +107,4 @@ class _PlaylistPageState extends State<PlaylistPage>{
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
-
 }

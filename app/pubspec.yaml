@@ -40,7 +40,6 @@ dependencies:
   flutter_gherkin: ^2.0.0
   glob: ^2.1.1
   test: ^1.22.0
-  spotify_sdk:
   firebase_database: ^10.1.1
 
 dev_dependencies:
