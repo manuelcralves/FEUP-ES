@@ -1,13 +1,9 @@
-
-import 'dart:math';
-
-
 import 'package:app/Playlist/Playlist_Backend.dart';
 import 'package:app/Playlist/Playlist_create_frontend.dart';
+import 'package:app/Templates/Templates.dart';
 import 'package:app/login/login_backend.dart';
 import 'package:app/login/login_frontend.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -15,32 +11,14 @@ import '../Index/index.dart';
 import '../Playlist/PlaylistPage.dart';
 import '../main.dart';
 
-enum MenuValues{
-login,
-settings
-}
 
 
 class HomePage extends StatefulWidget {
-
-  List<String> playlist_list = [];
-
-  void playlist_add(String name){
-    if(name!="") {
-      playlist_list.add(name);
-    }
-  }
-  void playlist_remove(String name){
-    playlist_list.remove(name);
-  }
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-
-
 class _HomePageState extends State<HomePage> {
-  MenuValues? menu;
   User? user;
 
   @override
@@ -59,6 +37,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    if (user != null) {
+      return Index();
+    }
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -127,14 +108,10 @@ class _HomePageState extends State<HomePage> {
                   side: BorderSide(color: Colors.black),
                 ),
               ),
-
             ],
           ),
         ),
       ),
     );
   }
-
-
-
 }

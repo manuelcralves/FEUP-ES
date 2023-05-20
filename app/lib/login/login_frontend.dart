@@ -50,7 +50,6 @@ class LoginAccount extends State<Login_Page> {
         );
       }
     } catch (e) {
-      // Handle login failure, show error message, etc.
       print('Login failed: $e');
     }
   }
@@ -58,7 +57,6 @@ class LoginAccount extends State<Login_Page> {
   Future<void> submit_signup() async {
     if (_email != null && _password != null) {
       if (_password!.length < 6) {
-        // Handle password length requirement
         showDialog(
           context: context,
           builder: (BuildContext context) {
@@ -89,74 +87,73 @@ class LoginAccount extends State<Login_Page> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: Templates().AppbarSpotivibes(),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(40.0),
-          child: Form(
-            key: _formKey,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextFormField(
-                  key: Key("email"),
-                  decoration: InputDecoration(
-                    labelText: 'Username or email',
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter your username or email';
-                    }
-                    return null;
-                  },
-                  onChanged: (value) {
-                    setState(() {
-                      _email = value;
-                    });
-                  },
-                ),
-                SizedBox(height: 30),
-                TextFormField(
-                  key: Key("password"),
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter your password';
-                    }
-                    return null;
-                  },
-                  onChanged: (value) {
-                    setState(() {
-                      _password = value;
-                    });
-                  },
-                ),
-                SizedBox(height: 30),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      key: Key("Sign In"),
-                      onPressed: submit_login,
-                      child: Text('Login'),
-                    ),
-                    SizedBox(width: 20),
-                    ElevatedButton(
-                      key: Key("Create"),
-                      onPressed: submit_signup,
-                      child: Text('Signup'),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
+    return Scaffold(appBar: Templates.AppbarSpotivibes(),
+    body: Center(
+    child: Padding(
+    padding: const EdgeInsets.all(40.0),
+    child: Form(
+    key: _formKey,
+    child: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+    TextFormField(
+    key: Key("email"),
+    decoration: InputDecoration(
+    labelText: 'email',
+    ),
+    validator: (value) {
+    if (value == null || value.isEmpty) {
+    return 'Please enter your username or email';
+    }
+    return null;
+    },
+    onChanged: (value) {
+    setState(() {
+    _email = value;
+    });
+    },
+    ),
+      SizedBox(height: 30),
+      TextFormField(
+        key: Key("password"),
+        obscureText: true,
+        decoration: InputDecoration(
+          labelText: 'Password',
         ),
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'Please enter your password';
+          }
+          return null;
+        },
+        onChanged: (value) {
+          setState(() {
+            _password = value;
+          });
+        },
       ),
+      SizedBox(height: 30),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(
+            key: Key("Sign In"),
+            onPressed: submit_login,
+            child: Text('Login'),
+          ),
+          SizedBox(width: 20),
+          ElevatedButton(
+            key: Key("Create"),
+            onPressed: submit_signup,
+            child: Text('Signup'),
+          ),
+        ],
+      ),
+    ],
+    ),
+    ),
+    ),
+    ),
     );
   }
 }

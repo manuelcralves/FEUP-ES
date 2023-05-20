@@ -1,4 +1,5 @@
 import 'package:app/HomePage/HomePage.dart';
+import 'package:app/Templates/Templates.dart';
 import 'package:flutter/material.dart';
 import 'package:app/profile/profile.dart';
 import 'package:app/settings/settings.dart';
@@ -18,7 +19,6 @@ class _IndexState extends State<Index> {
   Future<void> signout() async {
     try {
       await FirebaseAuth.instance.signOut();
-      // Redirect to the homepage
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => HomePage()),
@@ -33,9 +33,8 @@ class _IndexState extends State<Index> {
   @override
   void initState() {
     super.initState();
-    // Fetch the playlists from Firebase Realtime Database
     String? uid = FirebaseAuth.instance.currentUser?.uid;
-    playlistsStream = Playlist_Backend.getPlaylistsFromFirebase(uid);
+    playlistsStream = Playlist_Backend.getPlaylistsFromFirebase();
   }
 
   @override
@@ -45,8 +44,8 @@ class _IndexState extends State<Index> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Index Page'),
-        automaticallyImplyLeading: false, // Remove the "Go Back" arrow
+        title: Text('Spotivibes'),
+        automaticallyImplyLeading: false,
         actions: [
           if (isLoggedIn)
             IconButton(
@@ -70,7 +69,7 @@ class _IndexState extends State<Index> {
           if (isLoggedIn)
             IconButton(
               icon: Icon(Icons.exit_to_app),
-              onPressed: signout, // Call the signout function
+              onPressed: signout,
             ),
           if (isLoggedIn)
             IconButton(
@@ -94,69 +93,98 @@ class _IndexState extends State<Index> {
             ),
         ],
       ),
-      body: isLoggedIn
-          ? StreamBuilder(
-        stream: playlistsStream,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            // Process and display the playlists data
-            Map<dynamic, dynamic>? playlistsData =
-                snapshot.data?.snapshot.value;
-            if (playlistsData == null || playlistsData.isEmpty) {
-              return Center(
-                child: Text('User has no Playlists Created!'),
-              );
-            }
-            List<Widget> playlistWidgets = [];
-            playlistsData.forEach((key, value) {
-              String playlistTitle = key;
-              String playlistCreator =
-                  value['creator'] ?? 'Unknown Creator';
-              playlistWidgets.add(ListTile(
-                title: Text(playlistTitle),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => PlaylistPage(
-                        title: playlistTitle,
-                        creator: playlistCreator,
+      body: isLoggedIn ? Container(
+        margin: EdgeInsets.only(left: 20),
+        child: Container(
+          child: Visibility(
+            visible: FirebaseAuth.instance.currentUser?.uid != null,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(padding: EdgeInsets.only(top: 70)),
+                Text(
+                  "Playlists",
+                  style: TextStyle(fontSize: 30, fontFamily: AutofillHints.givenName),
+                ),
+                Padding(padding: EdgeInsets.only(top: 70)),
+                FloatingActionButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Playlist_Create()),
+                    );
+                  },
+                  child: const Icon(Icons.add),
+                ),
+                SizedBox(height: 16),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: StreamBuilder(
+                        stream: playlistsStream,
+                        builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+                          if (snapshot.hasData) {
+                            Map<dynamic, dynamic>? playlists = snapshot.data?.snapshot.value;
+                            if (playlists != null) {
+                              List<Widget> buttons = [];
+                              playlists.forEach((key, value) {
+                                buttons.add(
+                                  Column(
+                                    children: [
+                                      const SizedBox(
+                                        height: 16,
+                                      ),
+                                      FloatingActionButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(builder: (context) => PlaylistPage(title: key)),
+                                          );
+                                        },
+                                        child: Text(key),
+                                        backgroundColor: Colors.blue,
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              });
+                              return Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: buttons,
+                              );
+                            }
+                          }
+                          return Container();
+                        },
                       ),
                     ),
-                  );
-                },
-              ));
-            });
-            return ListView(
-              children: playlistWidgets,
-            );
-          } else if (snapshot.hasError) {
-            return Text('Error: ${snapshot.error}');
-          } else {
-            return CircularProgressIndicator();
-          }
-        },
-      )
-          : Center(
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ) : Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('You need to be logged in to check all functionalities!'),
             IconButton(
-              icon: Icon(Icons.exit_to_app),
+             icon: Icon(Icons.exit_to_app),
               onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                );
-              },
-            ),
-          ],
-        ),
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => HomePage()),
+              );
+           },
+          ),
+        ],
       ),
+    ),
+      bottomNavigationBar: Templates.Footer(context),
     );
   }
-
-
-
 }
