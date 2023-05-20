@@ -45,6 +45,21 @@ class Login_Backend {
     }
   }
 
+  Future<bool> checkAuthentication(String email, String password) async {
+    try {
+      await Firebase.initializeApp();
+      UserCredential credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      User? user = credential.user;
+      return user != null;
+    } on FirebaseAuthException catch (e) {
+      print('Authentication error: $e');
+      return false;
+    }
+  }
+
 
   Future<void> signout() async{
     try{
