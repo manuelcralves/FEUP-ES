@@ -47,6 +47,62 @@ class Settings extends StatelessWidget {
     );
   }
 
+  void changePassword(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        String newPassword = '';
+
+        return AlertDialog(
+          title: Text('Change Password'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: 'New Password',
+                ),
+                onChanged: (value) {
+                  newPassword = value;
+                },
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () async {
+                // Change the user's password in Firebase
+                try {
+                  await FirebaseAuth.instance.currentUser?.updatePassword(newPassword);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Password changed successfully.'),
+                    ),
+                  );
+                } catch (e) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Error changing password: $e'),
+                    ),
+                  );
+                }
+
+                Navigator.pop(context);
+              },
+              child: Text('Submit'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Cancel'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,17 +121,6 @@ class Settings extends StatelessWidget {
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
-              ),
-              SizedBox(height: 16),
-              SwitchListTile(
-                title: Text('Notification Settings'),
-                value: true,
-                onChanged: (value) {},
-              ),
-              SwitchListTile(
-                title: Text('Dark Mode'),
-                value: false,
-                onChanged: (value) {},
               ),
               SizedBox(height: 24),
               Text(
@@ -97,7 +142,7 @@ class Settings extends StatelessWidget {
                 leading: Icon(Icons.lock),
                 title: Text('Change Password'),
                 onTap: () {
-                  // Handle change password
+                  changePassword(context);
                 },
               ),
               ListTile(
