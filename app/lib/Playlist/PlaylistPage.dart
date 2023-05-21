@@ -35,7 +35,7 @@ class _PlaylistPageState extends State<PlaylistPage> {
           loadedMusicList.add(music);
         }
       }
-      print(loadedMusicList);
+
     }
 
     setState(() {
@@ -50,6 +50,19 @@ class _PlaylistPageState extends State<PlaylistPage> {
       body:Column(
         children:[
           Templates.SubTitle(widget.title),
+          ElevatedButton(
+            onPressed: () {
+              Playlist_Backend.deletePlaylist(widget.title);
+              Navigator.pop(context);
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.red,
+            ),
+            child: Text(
+              'Delete Playlist',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
           Expanded(
             child: ListView.separated(
               itemCount: musicList.length,
@@ -67,14 +80,16 @@ class _PlaylistPageState extends State<PlaylistPage> {
                       ElevatedButton(
                         onPressed: () {
                           Playlist_Backend.removeMusicFromPlaylist(music.getIdMusic(), widget.title);
-                          loadMusicList();
+                          setState(() {
+                            musicList.remove(music);
+                          });
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.red,
                         ),
                         child: Text('Remove'),
                       ),
-                      SizedBox(width: 8.0), // Espaçamento entre os botões
+                      SizedBox(width: 8.0),
                       ElevatedButton(
                         onPressed: () {
                           // Lógica para ver mais detalhes da música

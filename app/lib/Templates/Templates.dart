@@ -45,7 +45,7 @@ class Templates{
     }
     static SubTitle(String text){
       return Padding(
-        padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 80.0),
+        padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 70.0),
         child: Center(
           child: Text(
             text,
