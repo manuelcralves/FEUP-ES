@@ -47,6 +47,62 @@ class Settings extends StatelessWidget {
     );
   }
 
+  void editEmail(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        String newEmail = '';
+
+        return AlertDialog(
+          title: Text('Edit Email'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: 'New Email',
+                ),
+                onChanged: (value) {
+                  newEmail = value;
+                },
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () async {
+                // Change the user's email in Firebase
+                try {
+                  await FirebaseAuth.instance.currentUser?.updateEmail(newEmail);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Email changed successfully.'),
+                    ),
+                  );
+                } catch (e) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Error changing email: $e'),
+                    ),
+                  );
+                }
+
+                Navigator.pop(context);
+              },
+              child: Text('Submit'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Cancel'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   void changePassword(BuildContext context) {
     showDialog(
       context: context,
@@ -133,9 +189,9 @@ class Settings extends StatelessWidget {
               SizedBox(height: 16),
               ListTile(
                 leading: Icon(Icons.person),
-                title: Text('Edit Profile'),
+                title: Text('Edit Email'),
                 onTap: () {
-                  // Handle edit profile
+                  editEmail(context);
                 },
               ),
               ListTile(
