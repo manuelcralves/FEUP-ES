@@ -1,8 +1,11 @@
 import 'package:app/HomePage/HomePage.dart';
-import 'package:app/Profile/Profile_frontend.dart';
+import 'package:app/Search/Frontend/Search_General_Agent_Frontend.dart';
+import 'package:app/Search/Frontend/Search_General_Musics_Frontend.dart';
 import 'package:flutter/material.dart';
 
-import '../Search/Search_Frontend_Musics.dart';
+import '../Index/index.dart';
+import '../Search/Frontend/Search_Frontend_Musics.dart';
+import '../profile/profile.dart';
 
 class Templates{
 
@@ -15,6 +18,7 @@ class Templates{
         backgroundColor: Colors.green[800],)
       );
     }
+
     static BottomNavigationBar Footer(BuildContext context){
       return BottomNavigationBar(
             items: const [
@@ -31,21 +35,37 @@ class Templates{
           onTap: (index) {
             switch (index) {
               case 0:
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => Index()),
+                      (route) => false,
+                );
                 break;
               case 1:
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Search_Frontend_Musics(playlist_name: '',)));
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => Search_General_Musics_Frontend()),
+                      (route) => false,
+                );
                 break;
               case 2:
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => profile_frontend()));
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => Profile()),
+                      (route) => false,
+                );
                 break;
             }
           },
+        unselectedItemColor: Colors.black,
+        selectedItemColor: Colors.blue,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
       );
     }
     static SubTitle(String text){
       return Padding(
-        padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 80.0),
+        padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 70.0),
         child: Center(
           child: Text(
             text,
@@ -56,6 +76,30 @@ class Templates{
             ),
           ),
         ),
+      );
+    }
+
+    static Search_Options(BuildContext context){
+      return BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label:'SearchMusics' ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label:'SearchArtists'),
+        ],
+        onTap: (index) {
+          switch (index) {
+            case 0:
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Search_General_Musics_Frontend()));
+              break;
+            case 1:
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Search_General_Agents_Frontend()));
+              break;
+          }
+        },
+        selectedItemColor: Colors.green,
       );
     }
 }

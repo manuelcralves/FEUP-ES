@@ -47,16 +47,6 @@ class _IndexState extends State<Index> {
         title: Text('Spotivibes'),
         automaticallyImplyLeading: false,
         actions: [
-          if (isLoggedIn)
-            IconButton(
-              icon: Icon(Icons.person),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Profile()),
-                );
-              },
-            ),
           IconButton(
             icon: Icon(Icons.settings),
             onPressed: () {
@@ -70,16 +60,6 @@ class _IndexState extends State<Index> {
             IconButton(
               icon: Icon(Icons.exit_to_app),
               onPressed: signout,
-            ),
-          if (isLoggedIn)
-            IconButton(
-              icon: Icon(Icons.playlist_add),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Playlist_Create()),
-                );
-              },
             ),
           if (!isLoggedIn)
             IconButton(

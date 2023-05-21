@@ -3,8 +3,8 @@ import 'dart:core';
 import 'package:app/Playlist/Playlist_Backend.dart';
 import 'package:flutter/material.dart';
 
-import '../Classes/Music.dart';
-import '../Music/Music_Backend.dart';
+import '../../Classes/Music.dart';
+import '../../Music/Music_Backend.dart';
 
 class Search_Musics_to_Add extends SearchDelegate<Music>{
   Future<List<Music>> musics;

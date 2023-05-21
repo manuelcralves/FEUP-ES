@@ -14,7 +14,7 @@ class Playlist_Backend extends Playlist{
     String? uid = FirebaseAuth.instance.currentUser?.uid;
     DatabaseReference ref = FirebaseDatabase.instance.ref("users/$uid/Playlists");
 
-    await ref.child(getTitle()).set("");
+    await ref.child(getTitle()).set({0});
   }
 
   static Stream<dynamic>? getPlaylistsFromFirebase() {
@@ -69,6 +69,21 @@ class Playlist_Backend extends Playlist{
   static Future<void> removeMusicFromPlaylist (int _idMusic, String playlist_name) async {
     String? uid = FirebaseAuth.instance.currentUser?.uid;
     DatabaseReference ref = FirebaseDatabase.instance.ref("users/$uid/Playlists/$playlist_name");
+
+    DatabaseEvent event = await ref.once();
+    DataSnapshot snapshot = event.snapshot;
+    List<dynamic> currentList = snapshot.value as List<dynamic> ?? [];
+
+    currentList.remove(_idMusic);
+
+    await ref.set(currentList);
+  }
+
+  static Future<void> deletePlaylist (String playlist_name) async {
+    String? uid = FirebaseAuth.instance.currentUser?.uid;
+    DatabaseReference ref = FirebaseDatabase.instance.ref("users/$uid/Playlists/$playlist_name");
+
+    ref.set(null);
   }
 
 }

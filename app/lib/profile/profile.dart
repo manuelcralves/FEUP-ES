@@ -1,3 +1,4 @@
+import 'package:app/Templates/Templates.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -46,6 +47,7 @@ class _ProfileState extends State<Profile> {
           ],
         ),
       ),
+      bottomNavigationBar: Templates.Footer(context),
     );
   }
 }
