@@ -47,6 +47,118 @@ class Settings extends StatelessWidget {
     );
   }
 
+  void editEmail(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        String newEmail = '';
+
+        return AlertDialog(
+          title: Text('Edit Email'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: 'New Email',
+                ),
+                onChanged: (value) {
+                  newEmail = value;
+                },
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () async {
+                // Change the user's email in Firebase
+                try {
+                  await FirebaseAuth.instance.currentUser?.updateEmail(newEmail);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Email changed successfully.'),
+                    ),
+                  );
+                } catch (e) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Error changing email: $e'),
+                    ),
+                  );
+                }
+
+                Navigator.pop(context);
+              },
+              child: Text('Submit'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Cancel'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void changePassword(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        String newPassword = '';
+
+        return AlertDialog(
+          title: Text('Change Password'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: 'New Password',
+                ),
+                onChanged: (value) {
+                  newPassword = value;
+                },
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () async {
+                // Change the user's password in Firebase
+                try {
+                  await FirebaseAuth.instance.currentUser?.updatePassword(newPassword);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Password changed successfully.'),
+                    ),
+                  );
+                } catch (e) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Error changing password: $e'),
+                    ),
+                  );
+                }
+
+                Navigator.pop(context);
+              },
+              child: Text('Submit'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Cancel'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,17 +178,6 @@ class Settings extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 16),
-              SwitchListTile(
-                title: Text('Notification Settings'),
-                value: true,
-                onChanged: (value) {},
-              ),
-              SwitchListTile(
-                title: Text('Dark Mode'),
-                value: false,
-                onChanged: (value) {},
-              ),
               SizedBox(height: 24),
               Text(
                 'Account Settings',
@@ -88,16 +189,16 @@ class Settings extends StatelessWidget {
               SizedBox(height: 16),
               ListTile(
                 leading: Icon(Icons.person),
-                title: Text('Edit Profile'),
+                title: Text('Edit Email'),
                 onTap: () {
-                  // Handle edit profile
+                  editEmail(context);
                 },
               ),
               ListTile(
                 leading: Icon(Icons.lock),
                 title: Text('Change Password'),
                 onTap: () {
-                  // Handle change password
+                  changePassword(context);
                 },
               ),
               ListTile(
