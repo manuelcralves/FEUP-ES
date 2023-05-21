@@ -1,7 +1,13 @@
-
 import 'package:flutter/cupertino.dart';
 
-class profile_frontend extends StatefulWidget{
+import '../Classes/Music.dart';
+
+class MusicPage extends StatefulWidget{
+
+  final Music music;
+
+  MusicPage({required this.music});
+
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState

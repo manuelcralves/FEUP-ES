@@ -1,12 +1,12 @@
 import 'package:app/Playlist/Playlist_Backend.dart';
-import 'package:app/Search/Search_Musics_to_Add.dart';
+import 'package:app/Search/Search_Bar/Search_Musics_to_Add.dart';
 import 'package:app/Templates/Templates.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../Classes/Music.dart';
-import '../Classes/Playlist.dart';
-import '../Music/Music_Backend.dart';
+import '../../Classes/Music.dart';
+import '../../Classes/Playlist.dart';
+import '../../Music/Music_Backend.dart';
 
 class Search_Frontend_Musics extends StatefulWidget{
   final String playlist_name;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../Classes/Music.dart';
 import '../Music/Music_Backend.dart';
-import '../Search/Search_Frontend_Musics.dart';
+import '../Search/Frontend/Search_Frontend_Musics.dart';
 import '../Templates/Templates.dart';
 import 'Playlist_Backend.dart';
 

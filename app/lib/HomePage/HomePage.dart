@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
               SizedBox(height: 20),
               OutlinedButton(
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(builder: (context) => Index()),
                   );
