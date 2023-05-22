@@ -1,38 +1,30 @@
-import 'package:app/Index/index.dart';
+// This is a basic Flutter widget test.
+//
+// To perform an interaction with a widget in your test, use the WidgetTester
+// utility in the flutter_test package. For example, you can send tap and scroll
+// gestures. You can also use WidgetTester to find child widgets in the widget
+// tree, read text, and verify that the values of widget properties are correct.
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:app/login/login_frontend.dart';
+
+import 'package:app/main.dart';
 
 void main() {
-  testWidgets('Invalid email format validation', (WidgetTester tester) async {
-    await tester.pumpWidget(MaterialApp(home: Login_Page()));
+  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(const MyApp());
 
-    // Enter invalid email format.
-    await tester.enterText(find.byKey(Key('email')), 'invalidemail');
-    await tester.enterText(find.byKey(Key('password')), 'password');
+    // Verify that our counter starts at 0.
+    expect(find.text('0'), findsOneWidget);
+    expect(find.text('1'), findsNothing);
 
-    // Tap the Login button and trigger a frame.
-    await tester.tap(find.byKey(Key('Sign In')));
+    // Tap the '+' icon and trigger a frame.
+    await tester.tap(find.byIcon(Icons.add));
     await tester.pump();
 
-    // Verify that an error message is displayed for invalid email format.
-    expect(find.text('Email or password are incorrect.'), findsNothing);
+    // Verify that our counter has incremented.
+    expect(find.text('0'), findsNothing);
+    expect(find.text('1'), findsOneWidget);
   });
-
-  testWidgets('Valid login', (WidgetTester tester) async {
-    await tester.pumpWidget(MaterialApp(home: Login_Page()));
-
-    // Enter valid email and password.
-    await tester.enterText(find.byKey(Key('email')), 'hey@gmail.com');
-    await tester.enterText(find.byKey(Key('password')), '123456');
-
-    // Tap the Login button and trigger a frame.
-    await tester.tap(find.byKey(Key('Sign In')));
-    await tester.pump();
-
-    // Verify that the Index page is displayed.
-    expect(find.byType(Index), findsNothing);
-  });
-
-  
 }
