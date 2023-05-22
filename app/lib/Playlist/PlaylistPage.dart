@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../Classes/Music.dart';
+import '../Music/MusicPage.dart';
 import '../Music/Music_Backend.dart';
 import '../Search/Frontend/Search_Frontend_Musics.dart';
 import '../Templates/Templates.dart';
@@ -92,8 +93,10 @@ class _PlaylistPageState extends State<PlaylistPage> {
                       SizedBox(width: 8.0),
                       ElevatedButton(
                         onPressed: () {
-                          // Lógica para ver mais detalhes da música
-                          // ...
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => MusicPage(music: music)),
+                          );
                         },
                         child: Text('See More'),
                       ),
