@@ -1,37 +1,111 @@
-{ "Artists": [
-  {
-  "_name": "Adele",
-  "_musics": [
-    1,
-    3,
-    4,
-    5,
-    6,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    16
-  ]
-  },
-  {
-  "_name": "Quim Barreiros",
-  "_musics": [2, 7, 15, 17]
-  },
-  {
-  "_name": "Taylor Swift",
-  "_musics": [18]
-  },
-  {
-  "_name": "David Carreira",
-  "_musics": [19]
-  },
-  {
-  "_name": "David Guetta",
-  "_musics": [20]
-  }
+{
+  "Artists": [
+    {
+      "_name": "Adele",
+      "_musics": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        16,
+        21
+      ]
+    },
+    {
+      "_name": "Quim Barreiros",
+      "_musics": [2, 7, 15, 17]
+    },
+    {
+      "_name": "Taylor Swift",
+      "_musics": [18]
+    },
+    {
+      "_name": "David Carreira",
+      "_musics": [19]
+    },
+    {
+      "_name": "David Guetta",
+      "_musics": []
+    },
+    {
+      "_name": "Gotye",
+      "_musics": [22]
+    },
+    {
+      "_name": "Luis Fonsi",
+      "_musics": [23]
+    },
+    {
+      "_name": "OneRepublic",
+      "_musics": [24]
+    },
+    {
+      "_name": "Katy Perry",
+      "_musics": [25, 29]
+    },
+    {
+      "_name": "Ed Sheeran",
+      "_musics": [26, 27]
+    },
+    {
+      "_name": "Wiz Khalifa",
+      "_musics": [28]
+    },
+    {
+      "_name": "Tones and I",
+      "_musics": [30]
+    },
+    {
+      "_name": "The Weeknd",
+      "_musics": [31]
+    },
+    {
+      "_name": "Billie Eilish",
+      "_musics": [32]
+    },
+    {
+      "_name": "Mark Ronson",
+      "_musics": [33]
+    },
+    {
+      "_name": "Bruno Mars",
+      "_musics": [33]
+    },
+    {
+      "_name": "Sting",
+      "_musics": [34]
+    },
+    {
+      "_name": "Maroon 5",
+      "_musics": [35]
+    },
+    {
+      "_name": "Cardi B",
+      "_musics": [35]
+    },
+    {
+      "_name": "Lewis Capaldi",
+      "_musics": [36]
+    },
+    {
+      "_name": "Whitney Houston",
+      "_musics": [37]
+    },
+    {
+      "_name": "Guns N' Roses",
+      "_musics": [38]
+    },
+    {
+      "_name": "Drake",
+      "_musics": [39]
+    }
   ]
 }
