@@ -2,13 +2,14 @@ import 'package:app/Music/Music_Backend.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../Artist/Artist_Backend.dart';
 import '../../Classes/Artist.dart';
 import '../../Artist/ArtistPage.dart';
 import '../../Templates/Templates.dart';
-import '../Search_Bar/Search_General_Artists.dart';
+import '../../Search/Search_Bar/Search_General_Artists.dart';
 
 class Search_General_Artists_Frontend extends StatelessWidget {
-  late Future<List<Artist>> artists = Music_Backend.getAllArtistsFromDatabase();
+  late Future<List<Artist>> artists = Artist_Backend.getAllArtistsFromDatabase();
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class Search_General_Artists_Frontend extends StatelessWidget {
           Templates.SubTitle("Artists"),
           OutlinedButton.icon(
             onPressed: () {
-              showSearch(context: context, delegate: Search_General_Artists(artists: artists));
+              showSearch(context: context, delegate: SearchGeneralArtists(artists: artists));
             },
             label: Text('Search'),
             icon: Icon(Icons.search),

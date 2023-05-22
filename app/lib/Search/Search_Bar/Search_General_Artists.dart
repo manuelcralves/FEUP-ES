@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../Classes/Artist.dart';
-import '../Artist/ArtistPage.dart';
+import '../../Artist/ArtistPage.dart';
+import '../../Classes/Artist.dart';
 
 class SearchGeneralArtists extends SearchDelegate<Artist> {
   Future<List<Artist>> artists;
