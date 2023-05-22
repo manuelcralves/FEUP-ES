@@ -41,7 +41,7 @@ class _ProfileState extends State<Profile> {
             ),
             SizedBox(height: 20),
             Text(
-              'Email: ${email ?? 'Unknown'}',
+              'Email: ${email ?? 'GUEST USER'}',
               style: TextStyle(fontSize: 16),
             ),
           ],
