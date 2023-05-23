@@ -1,15 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 class Comment {
-  late User _user;
+  late String _email;
   late String _comment;
 
-  User getUser() {
-    return _user;
+  String getEmail() {
+    return _email;
   }
 
-  void setUser(User user) {
-    _user = user;
+  void setUser(String user) {
+    _email = user;
   }
 
   String getComment() {
@@ -20,8 +20,8 @@ class Comment {
     _comment = comment;
   }
 
-  Comment(User user, String comment) {
-    _user = user;
+  Comment(String email, String comment) {
+    _email = email;
     _comment = comment;
   }
 }

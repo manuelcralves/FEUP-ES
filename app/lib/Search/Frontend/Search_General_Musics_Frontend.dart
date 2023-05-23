@@ -18,16 +18,19 @@ class Search_General_Musics_Frontend extends StatelessWidget{
         children: [
           Templates.Search_Options(context),
           Templates.SubTitle("Musics"),
-          OutlinedButton.icon(
-            onPressed: () {
-              showSearch(context: context, delegate: Search_General_Musics(musics: musics));
-            },
-            label: Text('Search'),
-            icon: Icon(Icons.search),
-            style: OutlinedButton.styleFrom(
-              foregroundColor: Colors.green,
-              side: BorderSide(color: Colors.black),
+          ElevatedButton.icon(
+            icon: const Icon(Icons.search),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.white38,
+              shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(60))),
+              alignment: Alignment.centerLeft,
+              fixedSize: const Size(313,17),
             ),
+            label: const Text('Search'),
+            onPressed: () {
+              showSearch(context: context, delegate: Search_General_Musics(musics:musics));
+
+            },
           ),
           Expanded(
             child: FutureBuilder<List<Music>>(

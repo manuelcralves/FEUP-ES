@@ -42,18 +42,20 @@ class _Search_Frontend_Music_State extends State<Search_Frontend_Musics> {
       body: Column(
         children: [
           Templates.SubTitle("Add Musics"),
-          OutlinedButton.icon(
+          ElevatedButton.icon(
+            icon: const Icon(Icons.search),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.white38,
+              shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(60))),
+              alignment: Alignment.centerLeft,
+              fixedSize: const Size(313,17),
+            ),
+            label: const Text('Search'),
             onPressed: () {
               showSearch(context: context, delegate: Search_Musics_to_Add(musics:musics, playlist_name:widget.playlist_name)).then((value) {
                 fetchMusics();
               });
             },
-            label: Text('Search'),
-            icon: Icon(Icons.search),
-            style: OutlinedButton.styleFrom(
-              foregroundColor: Colors.green,
-              side: BorderSide(color: Colors.black),
-            ),
           ),
           Expanded(
             child: FutureBuilder<List<Music>>(
