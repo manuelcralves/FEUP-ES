@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../Classes/Music.dart';
 import '../../Music/MusicPage.dart';
 
 class Search_General_Musics extends SearchDelegate<Music>{
 
+  SharedPreferences? _prefs;
+
   Future<List<Music>> musics;
+
+  Future<void> _initSharedPreferences() async {
+    _prefs = await SharedPreferences.getInstance();
+  }
 
   Search_General_Musics({required this.musics});
 
@@ -35,7 +41,7 @@ class Search_General_Musics extends SearchDelegate<Music>{
           final List<Music> filteredList = musicList
               .where((music) => music.getName().toLowerCase().contains(query.toLowerCase()))
               .toList();
-
+          _prefs?.setString('recentQuery', query);
           return ListView.builder(
             itemCount: filteredList.length,
             itemBuilder: (context, index) {
@@ -71,7 +77,7 @@ class Search_General_Musics extends SearchDelegate<Music>{
                 .where((music) =>
                 music.getName().toLowerCase().contains(query.toLowerCase()))
                 .toList();
-
+            String? recentQuery = _prefs?.getString('recentQuery');
             return ListView.builder(
               itemCount: filteredList.length,
               itemBuilder: (context, index) {

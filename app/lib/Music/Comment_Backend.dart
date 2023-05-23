@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 
 import '../Classes/Comment.dart';
-import '../Classes/User.dart';
 
 
 class Comment_Backend extends Comment{
