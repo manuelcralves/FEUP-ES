@@ -14,5 +14,7 @@
 
 ### Final result:
 
-![DONE_DONE](https://github.com/FEUP-LEIC-ES-2022-23/2LEIC10T1/blob/main/images/DONE_DONE.png)
+![DONE_DONE](https://github.com/FEUP-LEIC-ES-2022-23/2LEIC10T1/blob/main/images/DONEDONE1.png)
+![DONE_DONE](https://github.com/FEUP-LEIC-ES-2022-23/2LEIC10T1/blob/main/images/DONEDONE2.png)
+![DONE_DONE](https://github.com/FEUP-LEIC-ES-2022-23/2LEIC10T1/blob/main/images/DONEDONE3.png)
 ![DONE](https://github.com/FEUP-LEIC-ES-2022-23/2LEIC10T1/blob/main/images/DONE.png)
