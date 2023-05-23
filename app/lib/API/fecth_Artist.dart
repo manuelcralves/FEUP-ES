@@ -21,11 +21,12 @@ Future<dynamic> fetchArtist(String artistId) async {
     // Request failed :(
     throw Exception('Failed to load artist :(');
   }
+}
 
-  //function to call Artists
-  /*void main() async {
+//function to call Artists
+void main() async {
   try {
-    final artistId = 'ARTIST_ID'; // Replace with the artist ID you want to fetch
+    const artistId = 'PlaceHolder';
     final artistInfo = await fetchArtist(artistId);
     // Handle the artist information here
     print(artistInfo['name']);
@@ -34,5 +35,4 @@ Future<dynamic> fetchArtist(String artistId) async {
   } catch (e) {
     print('Error: $e');
   }
-}*/
 }
