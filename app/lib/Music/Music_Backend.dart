@@ -43,12 +43,12 @@ class Music_Backend extends Music {
     }
     return musics;
   }
+
   static Future<List<Music>> getAllMusicsNotInPlaylist(String playlistName) async {
     List<Music> allMusics = await getAllMusicsFromDatabase();
     List<int>? playlistMusics = await Playlist_Backend.getMusicsFromPlaylist(playlistName);
 
     if (playlistMusics != null) {
-      // Filtrar as músicas que estão na playlist
       allMusics = allMusics.where((music) => !playlistMusics.contains(music.getIdMusic())).toList();
     }
 

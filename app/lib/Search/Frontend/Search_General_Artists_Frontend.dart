@@ -11,6 +11,7 @@ import '../../Search/Search_Bar/Search_General_Artists.dart';
 class Search_General_Artists_Frontend extends StatelessWidget {
   late Future<List<Artist>> artists = Artist_Backend.getAllArtistsFromDatabase();
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,16 +20,19 @@ class Search_General_Artists_Frontend extends StatelessWidget {
         children: [
           Templates.Search_Options(context),
           Templates.SubTitle("Artists"),
-          OutlinedButton.icon(
+          ElevatedButton.icon(
+            icon: const Icon(Icons.search),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.white38,
+              shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(60))),
+              alignment: Alignment.centerLeft,
+              fixedSize: const Size(313,17),
+            ),
+            label: const Text('Search'),
             onPressed: () {
               showSearch(context: context, delegate: SearchGeneralArtists(artists: artists));
+
             },
-            label: Text('Search'),
-            icon: Icon(Icons.search),
-            style: OutlinedButton.styleFrom(
-              foregroundColor: Colors.green,
-              side: BorderSide(color: Colors.black),
-            ),
           ),
           Expanded(
             child: FutureBuilder<List<Artist>>(

@@ -19,17 +19,28 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  User? user;
+  late User? user;
+  bool _isMounted = false;
 
   @override
   void initState() {
     super.initState();
+    _isMounted = true;
     FirebaseAuth.instance.authStateChanges().listen((User? user) {
-      setState(() {
-        this.user = user;
-      });
+      if (_isMounted) {
+        setState(() {
+          this.user = user;
+        });
+      }
     });
   }
+
+  @override
+  void dispose() {
+    _isMounted = false;
+    super.dispose();
+  }
+
 
   void signout() {
     Login_Backend().signout();

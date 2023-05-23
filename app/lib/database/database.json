@@ -35,6 +35,101 @@
         "_idAlbum": 7,
         "_name": "1989",
         "_artist": "Taylor Swift"
+      },
+      {
+        "_idAlbum": 8,
+        "_name": "Reputation",
+        "_artist": "Taylor Swift"
+      },
+      {
+        "_idAlbum": 9,
+        "_name": "Making Mirrors",
+        "_artist": "Gotye"
+      },
+      {
+        "_idAlbum": 10,
+        "_name": "Vida",
+        "_artist": "Luis Fonsi"
+      },
+      {
+        "_idAlbum": 11,
+        "_name": "Native",
+        "_artist": "OneRepublic"
+      },
+      {
+        "_idAlbum": 12,
+        "_name": "Teenage Dream",
+        "_artist": "Katy Perry"
+      },
+      {
+        "_idAlbum": 13,
+        "_name": "Scorpion",
+        "_artist": "Drake"
+      },
+      {
+        "_idAlbum": 14,
+        "_name": "X",
+        "_artist": "Ed Sheeran"
+      },
+      {
+        "_idAlbum": 15,
+        "_name": "÷ (Divide)",
+        "_artist": "Ed Sheeran"
+      },
+      {
+        "_idAlbum": 16,
+        "_name": "Furious 7: Original Motion Picture Soundtrack",
+        "_artist": "Various Artists"
+      },
+      {
+        "_idAlbum": 17,
+        "_name": "Prism",
+        "_artist": "Katy Perry"
+      },
+      {
+        "_idAlbum": 18,
+        "_name": "The Kids Are Coming",
+        "_artist": "Tones and I"
+      },
+      {
+        "_idAlbum": 19,
+        "_name": "After Hours",
+        "_artist": "The Weeknd"
+      },
+      {
+        "_idAlbum": 20,
+        "_name": "When We All Fall Asleep, Where Do We Go?",
+        "_artist": "Billie Eilish"
+      },
+      {
+        "_idAlbum": 21,
+        "_name": "Uptown Special",
+        "_artist": "Mark Ronson"
+      },
+      {
+        "_idAlbum": 22,
+        "_name": "Ten Summoner's Tales",
+        "_artist": "Sting"
+      },
+      {
+        "_idAlbum": 23,
+        "_name": "Red Pill Blues",
+        "_artist": "Maroon 5"
+      },
+      {
+        "_idAlbum": 24,
+        "_name": "Divinely Uninspired to a Hellish Extent",
+        "_artist": "Lewis Capaldi"
+      },
+      {
+        "_idAlbum": 25,
+        "_name": "The Bodyguard: Original Soundtrack Album",
+        "_artist": "Whitney Houston"
+      },
+      {
+        "_idAlbum": 26,
+        "_name": "Appetite for Destruction",
+        "_artist": "Guns N' Roses"
       }
     ],
     "Artists": [
@@ -53,35 +148,97 @@
           12,
           13,
           14,
-          16
+          16,
+          21
         ]
       },
       {
         "_name": "Quim Barreiros",
-        "_musics": [
-          2,
-          7,
-          15,
-          17
-        ]
+        "_musics": [2, 7, 15, 17]
       },
       {
         "_name": "Taylor Swift",
-        "_musics": [
-          18
-        ]
+        "_musics": [18]
       },
       {
         "_name": "David Carreira",
-        "_musics": [
-          19
-        ]
+        "_musics": [19]
       },
       {
         "_name": "David Guetta",
-        "_musics": [
-          20
-        ]
+        "_musics": [20]
+      },
+      {
+        "_name": "Gotye",
+        "_musics": [22]
+      },
+      {
+        "_name": "Luis Fonsi",
+        "_musics": [23]
+      },
+      {
+        "_name": "OneRepublic",
+        "_musics": [24]
+      },
+      {
+        "_name": "Katy Perry",
+        "_musics": [25, 29]
+      },
+      {
+        "_name": "Ed Sheeran",
+        "_musics": [26, 27]
+      },
+      {
+        "_name": "Wiz Khalifa",
+        "_musics": [28]
+      },
+      {
+        "_name": "Tones and I",
+        "_musics": [30]
+      },
+      {
+        "_name": "The Weeknd",
+        "_musics": [31]
+      },
+      {
+        "_name": "Billie Eilish",
+        "_musics": [32]
+      },
+      {
+        "_name": "Mark Ronson",
+        "_musics": [33]
+      },
+      {
+        "_name": "Bruno Mars",
+        "_musics": [33]
+      },
+      {
+        "_name": "Sting",
+        "_musics": [34]
+      },
+      {
+        "_name": "Maroon 5",
+        "_musics": [35]
+      },
+      {
+        "_name": "Cardi B",
+        "_musics": [35]
+      },
+      {
+        "_name": "Lewis Capaldi",
+        "_musics": [36]
+      },
+      {
+        "_name": "Whitney Houston",
+        "_musics": [37]
+      },
+      {
+        "_name": "Guns N' Roses",
+        "_musics": [38]
+      },
+      {
+        "_name": "Drake",
+        "_musics": [39]
       }
     ],
     "Musics": [
@@ -224,6 +381,139 @@
         "_artist": "David Guetta feat. Sia",
         "_album": 6,
         "_lyrics": "I am titanium\nYou shoot me down, but I won't fall\nI am titanium"
+      },
+      {
+        "_idMusic": 21,
+        "_name": "Blank Space",
+        "_artist": "Taylor Swift",
+        "_album": 8,
+        "_lyrics": "Got a long list of ex-lovers, they'll tell you I'm insane."
+      },
+      {
+        "_idMusic": 22,
+        "_name": "Somebody That I Used to Know",
+        "_artist": "Gotye ft. Kimbra",
+        "_album": 9,
+        "_lyrics": "But you didn't have to cut me off, make out like it never happened."
+      },
+      {
+        "_idMusic": 23,
+        "_name": "Despacito",
+        "_artist": "Luis Fonsi & Daddy Yankee ft. Justin Bieber",
+        "_album": 10,
+        "_lyrics": "Despacito, quiero respirar tu cuello despacito."
+      },
+      {
+        "_idMusic": 24,
+        "_name": "Counting Stars",
+        "_artist": "OneRepublic",
+        "_album": 11,
+        "_lyrics": "Lately I've been, I've been losing sleep, dreaming about the things that we could be."
+      },
+      {
+        "_idMusic": 25,
+        "_name": "Firework",
+        "_artist": "Katy Perry",
+        "_album": 12,
+        "_lyrics": "Baby, you're a firework, come on, show 'em what you're worth."
+      },
+      {
+        "_idMusic": 26,
+        "_name": "Thinking Out Loud",
+        "_artist": "Ed Sheeran",
+        "_album": 14,
+        "_lyrics": "So honey now, take me into your loving arms, kiss me under the light of a thousand stars."
+      },
+      {
+        "_idMusic": 27,
+        "_name": "Shape of You",
+        "_artist": "Ed Sheeran",
+        "_album": 15,
+        "_lyrics": "I'm in love with the shape of you, we push and pull like a magnet do."
+      },
+      {
+        "_idMusic": 28,
+        "_name": "See You Again",
+        "_artist": "Wiz Khalifa ft. Charlie Puth",
+        "_album": 16,
+        "_lyrics": "It's been a long day without you, my friend, and I'll tell you all about it when I see you again."
+      },
+      {
+        "_idMusic": 29,
+        "_name": "Roar",
+        "_artist": "Katy Perry",
+        "_album": 17,
+        "_lyrics": "I got the eye of the tiger, a fighter, dancing through the fire, 'cause I am a champion, and you're gonna hear me roar."
+      },
+      {
+        "_idMusic": 30,
+        "_name": "Dance Monkey",
+        "_artist": "Tones and I",
+        "_album": 18,
+        "_lyrics": "They say, oh my god, I see the way you shine"
+      },
+      {
+        "_idMusic": 31,
+        "_name": "Blinding Lights",
+        "_artist": "The Weeknd",
+        "_album": 19,
+        "_lyrics": "I'm blinded by the lights"
+      },
+      {
+        "_idMusic": 32,
+        "_name": "Bad Guy",
+        "_artist": "Billie Eilish",
+        "_album": 20,
+        "_lyrics": "So you're a tough guy, like it really rough guy"
+      },
+      {
+        "_idMusic": 33,
+        "_name": "Uptown Funk",
+        "_artist": "Mark Ronson ft. Bruno Mars",
+        "_album": 21,
+        "_lyrics": "This hit, that ice cold, Michelle Pfeiffer, that white gold"
+      },
+      {
+        "_idMusic": 34,
+        "_name": "Shape of My Heart",
+        "_artist": "Sting",
+        "_album": 22,
+        "_lyrics": "I know that the spades are the swords of a soldier"
+      },
+      {
+        "_idMusic": 35,
+        "_name": "Girls Like You",
+        "_artist": "Maroon 5 ft. Cardi B",
+        "_album": 23,
+        "_lyrics": "Spent 24 hours, I need more hours with you"
+      },
+      {
+        "_idMusic": 36,
+        "_name": "Someone You Loved",
+        "_artist": "Lewis Capaldi",
+        "_album": 24,
+        "_lyrics": "Now the day bleeds into nightfall"
+      },
+      {
+        "_idMusic": 37,
+        "_name": "I Will Always Love You",
+        "_artist": "Whitney Houston",
+        "_album": 25,
+        "_lyrics": "And I will always love you"
+      },
+      {
+        "_idMusic": 38,
+        "_name": "Sweet Child O' Mine",
+        "_artist": "Guns N' Roses",
+        "_album": 26,
+        "_lyrics": "She's got eyes of the bluest skies"
+      },
+      {
+        "_idMusic": 39,
+        "_name": "Nice for What",
+        "_artist": "Drake",
+        "_album": 13,
+        "_lyrics": "Care for me, care for me, you said you'd care for me"
       }
     ]
   }

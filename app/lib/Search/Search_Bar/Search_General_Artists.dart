@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../Artist/ArtistPage.dart';
 import '../../Classes/Artist.dart';
 
 class SearchGeneralArtists extends SearchDelegate<Artist> {
+
+  SharedPreferences? _prefs;
+
   Future<List<Artist>> artists;
 
-  SearchGeneralArtists({required this.artists});
+  Future<void> _initSharedPreferences() async {
+    _prefs = await SharedPreferences.getInstance();
+  }
+
+  SearchGeneralArtists({required this.artists}) {
+    _initSharedPreferences();
+  }
 
   @override
   List<Widget>? buildActions(BuildContext context) {
@@ -31,6 +41,7 @@ class SearchGeneralArtists extends SearchDelegate<Artist> {
 
   @override
   Widget buildResults(BuildContext context) {
+    _initSharedPreferences();
     return FutureBuilder<List<Artist>>(
       future: artists,
       builder: (context, snapshot) {
@@ -40,7 +51,7 @@ class SearchGeneralArtists extends SearchDelegate<Artist> {
               .where((artist) =>
               artist.getName().toLowerCase().contains(query.toLowerCase()))
               .toList();
-
+          _prefs?.setString('recentQuery', query);
           return ListView.builder(
             itemCount: filteredList.length,
             itemBuilder: (context, index) {
@@ -69,6 +80,7 @@ class SearchGeneralArtists extends SearchDelegate<Artist> {
 
   @override
   Widget buildSuggestions(BuildContext context) {
+    _initSharedPreferences();
     return FutureBuilder<List<Artist>>(
       future: artists,
       builder: (context, snapshot) {
@@ -78,7 +90,7 @@ class SearchGeneralArtists extends SearchDelegate<Artist> {
               .where((artist) =>
               artist.getName().toLowerCase().contains(query.toLowerCase()))
               .toList();
-
+          String? recentQuery = _prefs?.getString('recentQuery');
           return ListView.builder(
             itemCount: filteredList.length,
             itemBuilder: (context, index) {
