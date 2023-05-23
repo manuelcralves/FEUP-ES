@@ -18,9 +18,10 @@ Future<List<dynamic>> fetchAlbums() async {
   } else {
     throw Exception('Failed to fetch albums :(');
   }
+}
 
-  //Function to call albums
-  /*void main() async {
+//Function to call albums
+void main() async {
   try {
     final albums = await fetchAlbums();
     // Handle the album information here
@@ -30,5 +31,4 @@ Future<List<dynamic>> fetchAlbums() async {
   } catch (e) {
     print('Error: $e');
   }
-}*/
 }
