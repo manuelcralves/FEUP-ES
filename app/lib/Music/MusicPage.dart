@@ -2,6 +2,7 @@
 
 import 'dart:async';
 
+import 'package:app/Album/Album_Backend.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -23,6 +24,7 @@ class _MusicPageState extends State<MusicPage> {
   bool _isCommentSectionExpanded = false;
   String? _myComment;
   late List<Comment> comments;
+  late String? album_name;
 
   @override
   void initState() {
@@ -32,6 +34,7 @@ class _MusicPageState extends State<MusicPage> {
 
   Future<void> loadComments() async {
     List<Comment> loadedCommentList = await Comment_Backend.getCommentsFromMusic(widget.music.getIdMusic());
+    album_name = await Album_Backend.getAlbumNameById( widget.music.getAlbum());
 
     if (loadedCommentList != null) {
       setState(() {
@@ -89,7 +92,7 @@ class _MusicPageState extends State<MusicPage> {
                   ),
                 ),
                 Text(
-                  widget.music.getAlbum().toString(),
+                  album_name!,
                   style: TextStyle(
                     fontSize: 24,
                   ),
@@ -216,7 +219,7 @@ class _MusicPageState extends State<MusicPage> {
                     : Container(
                       alignment: Alignment.center,
                       child: Text(
-                    'You need to be logged in to see the comments',
+                    'You need to be logged in to make a comment',
                   ),
                 ),
               ),

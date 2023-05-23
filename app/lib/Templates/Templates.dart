@@ -1,7 +1,8 @@
 import 'package:app/HomePage/HomePage.dart';
-import 'package:app/Search/Frontend/Search_General_Agent_Frontend.dart';
 import 'package:app/Search/Frontend/Search_General_Musics_Frontend.dart';
 import 'package:flutter/material.dart';
+import 'package:app/Search/Frontend/Search_General_Artists_Frontend.dart';
+
 
 import '../Index/index.dart';
 import '../Search/Frontend/Search_Frontend_Musics.dart';
@@ -95,7 +96,7 @@ class Templates{
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Search_General_Musics_Frontend()));
               break;
             case 1:
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Search_General_Agents_Frontend()));
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Search_General_Artists_Frontend()));
               break;
           }
         },

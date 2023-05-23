@@ -4,7 +4,7 @@ import 'Music.dart';
 class Album {
   late int _idAlbum;
   late String _name;
-  late Artist _artist;
+  late String _artist;
 
   int getIdAlbum() {
     return _idAlbum;
@@ -14,11 +14,11 @@ class Album {
     _idAlbum = idAlbum;
   }
 
-  Artist getArtist() {
+  String getArtist() {
     return _artist;
   }
 
-  void setArtist(Artist artist) {
+  void setArtist(String artist) {
     _artist = artist;
   }
 
@@ -31,7 +31,7 @@ class Album {
   }
 
 
-  Album(int idAlbum,String name, Artist artist) {
+  Album (int idAlbum,String name, String artist) {
     _name = name;
     _idAlbum = idAlbum;
     _artist = artist;
