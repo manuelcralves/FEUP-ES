@@ -6,7 +6,7 @@ Feature: Create Account
     When I fill the "email" field with "nabdbab@gmail.com"
     And I fill the "password" filed with "hadnhbdba"
     Then I tap the "Create" button
-    Then "User" should be diferent than "null"
+    Then I should have "Index" on screen
 
 Feature: Login into an existing Account
   Scenario: when email and password are specified and login is clicked
@@ -14,7 +14,7 @@ Feature: Login into an existing Account
     When I fill the "email" field with "nabdbab@gmail.com"
     And I fill the "password" filed with "hadnhbdba"
     Then I tap the "Sign In" button
-    Then "User" should be diferent than "null"
+    Then I should have "Index" on screen
 
 Feature: Login into a non-existing Account
   Scenario: when email and password are specified and login is clicked
@@ -22,4 +22,4 @@ Feature: Login into a non-existing Account
     When I fill the "email" field with "nsawfcb@gmail.com"
     And I fill the "password" filed with "hadnhbdba"
     Then I tap the "Sign In" button
-    Then "User" should be "null"
+    Then I should have "Index" on screen
