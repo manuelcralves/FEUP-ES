@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+//import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -21,5 +21,17 @@ Future<dynamic> fetchSongs() async {
   } else {
     // Request failed :(
     throw Exception('Failed to load songs :(');
+  }
+}
+
+void main() async {
+  try {
+    final song = await fetchSongs();
+    // Handle the song information here
+    for (var song in song) {
+      print(song['name']);
+    }
+  } catch (e) {
+    print('Error: $e');
   }
 }
