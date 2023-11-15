@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "582842829712",
+    "project_id": "clean-slate-121df",
+    "storage_bucket": "clean-slate-121df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582842829712:android:f6a0e64c6ca59bc1f4c115",
+        "android_client_info": {
+          "package_name": "com.example.clean_slate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582842829712-k10ac8e20esmkg1t3fp2021q1fdm666u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXq6TuM15nU_TIq7vDGayjDhuBzcZd6hA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "582842829712-k10ac8e20esmkg1t3fp2021q1fdm666u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

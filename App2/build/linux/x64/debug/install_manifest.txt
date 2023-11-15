@@ -1,0 +1,11 @@
+/home/SrAlicandro/Documents/2ºsemestre/ES/App2/build/linux/x64/debug/bundle/clean_slate
+/home/SrAlicandro/Documents/2ºsemestre/ES/App2/build/linux/x64/debug/bundle/data/icudtl.dat
+/home/SrAlicandro/Documents/2ºsemestre/ES/App2/build/linux/x64/debug/bundle/lib/libflutter_linux_gtk.so
+/home/SrAlicandro/Documents/2ºsemestre/ES/App2/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin
+/home/SrAlicandro/Documents/2ºsemestre/ES/App2/build/linux/x64/debug/bundle/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+/home/SrAlicandro/Documents/2ºsemestre/ES/App2/build/linux/x64/debug/bundle/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+/home/SrAlicandro/Documents/2ºsemestre/ES/App2/build/linux/x64/debug/bundle/data/flutter_assets/shaders/ink_sparkle.frag
+/home/SrAlicandro/Documents/2ºsemestre/ES/App2/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.json
+/home/SrAlicandro/Documents/2ºsemestre/ES/App2/build/linux/x64/debug/bundle/data/flutter_assets/FontManifest.json
+/home/SrAlicandro/Documents/2ºsemestre/ES/App2/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES.Z
+/home/SrAlicandro/Documents/2ºsemestre/ES/App2/build/linux/x64/debug/bundle/data/flutter_assets/version.json
